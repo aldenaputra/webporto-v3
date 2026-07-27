@@ -1,4 +1,5 @@
 import type { NavigationItem, Profile } from "./types";
+
 export const navigationItems: NavigationItem[] = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
@@ -7,29 +8,56 @@ export const navigationItems: NavigationItem[] = [
   { id: "publications", label: "Publications" },
   { id: "projects", label: "Projects" },
 ];
+
 export const profile: Profile = {
-  name: "Avery Chen",
-  roles: ["Software Engineer", "Data Practitioner"],
-  tagline: "Building dependable, thoughtful digital systems.",
-  bio: "A computer science practitioner focused on clear systems, useful interfaces, and steady technical growth.",
-  image: { src: "/images/profile/pic2.png", alt: "Portrait of Avery Chen" },
-  softSkills: ["Collaboration", "Clear communication", "Continuous learning"],
-  technicalSkills: [
-    { category: "Languages", items: ["TypeScript", "Python", "SQL"] },
-    { category: "Frameworks", items: ["Next.js", "React"] },
-    { category: "Tools", items: ["Git", "Vercel"] },
+  name: "Alden Ardiwinata Putra",
+  roles: ["Data Engineer", "Security-aware Analyst"],
+  tagline:
+    "Bridging data science, analytics, and engineering with security-aware data practices.",
+  bio: "A Computer Science graduate with a bachelor’s specialization in Database Technology and a master’s specialization in Information Security Management, currently awaiting graduation. My work sits at the intersection of analytics, business intelligence, data operations, and security-aware information management.",
+  image: { src: "/pic2.png", alt: "Portrait of Alden Ardiwinata Putra" },
+  softSkills: [
+    "Data storytelling",
+    "Stakeholder management",
+    "Strategic negotiation",
+    "Project leadership",
+    "Cross-department collaboration",
+    "Pitching",
   ],
-  certifications: [
+  technicalSkills: [
     {
-      name: "Cloud Fundamentals Certification",
-      issuer: "Placeholder issuer",
-      date: "2025",
+      category: "Data Science",
+      items: ["Python", "R", "Deep Learning", "AI", "Predictive Modeling"],
+    },
+    {
+      category: "Data Analytics & Reporting",
+      items: ["Power BI", "DAX", "Tableau", "Looker Studio", "Excel"],
+    },
+    {
+      category: "Data Engineering",
+      items: ["SQL", "HiveQL", "Spark", "Hadoop", "Bash", "Apps Script"],
+    },
+    {
+      category: "Information Security Management",
+      items: ["IT Risk Management", "Data Governance", "Security Auditing"],
     },
   ],
-  socials: [
-    { label: "GitHub", url: "https://github.com", icon: "github" },
-    { label: "LinkedIn", url: "https://www.linkedin.com", icon: "linkedin" },
+  certifications: [
+    { name: "Alibaba Cloud Certified Associate (ACA)" },
+    { name: "SQL (Advanced) by HackerRank" },
+    { name: "SAP Analytics Cloud Training by ASEAN DSE" },
   ],
-  contact: { email: "hello@example.com" },
-  footer: { signOff: "Built with care and curiosity.", copyrightName: "Avery Chen" },
+  socials: [
+    { label: "GitHub", url: "https://github.com/aldenaputra", icon: "github" },
+    {
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/aldenaputra/",
+      icon: "linkedin",
+    },
+  ],
+  contact: { email: "alden.aputra@gmail.com" },
+  footer: {
+    signOff: "Built with care, curiosity, and a systems mindset.",
+    copyrightName: "Alden Ardiwinata Putra",
+  },
 };
