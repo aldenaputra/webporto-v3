@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useId, useRef } from "react";
 import { X } from "lucide-react";
 
@@ -51,7 +52,11 @@ export function ProjectModal({
     };
 
     document.addEventListener("keydown", handleKeyDown);
-    dialogRef.current?.focus();
+    const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+    );
+    const firstFocusable = focusable?.[0];
+    firstFocusable?.focus();
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
@@ -88,11 +93,15 @@ export function ProjectModal({
 
         <div className="max-h-[70vh] overflow-y-auto px-6 py-6">
           <div className="overflow-hidden rounded-[1.25rem] border border-[var(--border)]">
-            <img
-              src={project.image.src}
-              alt={project.image.alt}
-              className="h-auto w-full object-cover"
-            />
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
+              <Image
+                src={project.image.src}
+                alt={project.image.alt}
+                fill
+                sizes="(min-width: 1280px) 60vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           <p className="mt-6 text-base leading-8 text-[var(--text-muted)]">
             {project.description}

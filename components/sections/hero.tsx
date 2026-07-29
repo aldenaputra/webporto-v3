@@ -49,7 +49,7 @@ export function Hero() {
   }, [displayRole, isDeleting, reducedMotion, roleIndex]);
 
   return (
-    <section id="hero" className="border-b border-[var(--border)]">
+    <section id="hero" className="flex min-h-[100svh] items-center border-b border-[var(--border)]">
       <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-24 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-28">
         <div className="max-w-2xl">
           <p className="font-ui-mono text-sm text-[var(--accent)]">
@@ -70,7 +70,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="/CV Alden Ardiwinata Putra 2026.pdf"
+              href="/CV ATS Alden V3.pdf"
               className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
             >
               View resume

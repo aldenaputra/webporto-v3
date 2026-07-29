@@ -1,16 +1,30 @@
 import type { Project } from "./types";
+
 export const projects: Project[] = [
   {
-    slug: "example-platform",
-    title: "Example Platform",
+    slug: "data-security-portfolio",
+    title: "Security Testing and Automation Portfolio",
     description:
-      "A placeholder project that keeps the final project data contract ready.",
+      "A practical security-focused project that combines scripting, testing workflows, and structured reporting for a modern web security review process.",
     image: {
-      src: "/images/projects/example-platform.png",
-      alt: "Example platform interface",
+      src: "/wstg.png",
+      alt: "Security testing workflow interface",
     },
-    stack: ["Next.js", "TypeScript"],
+    stack: ["Python", "OWASP", "Cybersecurity", "Automation"],
     featured: true,
+    links: [],
+  },
+  {
+    slug: "enterprise-network-simulation",
+    title: "Enterprise Network Simulation",
+    description:
+      "A network design and simulation project focused on redundancy, resilience, and operational metrics for enterprise infrastructure planning.",
+    image: {
+      src: "/gns.png",
+      alt: "Enterprise network diagram",
+    },
+    stack: ["GNS3", "Networking", "Security", "Simulation"],
+    featured: false,
     links: [],
   },
 ];

@@ -50,7 +50,7 @@ export function Experience() {
               const isActive = activeCompany === index;
               return (
                 <button
-                  key={entry.company}
+                  key={`${entry.company}-${index}`}
                   id={`tab-${index}`}
                   role="tab"
                   type="button"

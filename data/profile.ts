@@ -10,12 +10,12 @@ export const navigationItems: NavigationItem[] = [
 ];
 
 export const profile: Profile = {
-  name: "Alden Ardiwinata Putra",
+  name: "Alden Putra",
   roles: ["Data Engineer", "Security-aware Analyst"],
   tagline:
     "Bridging data science, analytics, and engineering with security-aware data practices.",
   bio: "A Computer Science graduate with a bachelor’s specialization in Database Technology and a master’s specialization in Information Security Management, currently awaiting graduation. My work sits at the intersection of analytics, business intelligence, data operations, and security-aware information management.",
-  image: { src: "/pic2.png", alt: "Portrait of Alden Ardiwinata Putra" },
+  image: { src: "/pic3.png", alt: "Portrait of me" },
   softSkills: [
     "Data storytelling",
     "Stakeholder management",

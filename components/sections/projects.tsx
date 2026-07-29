@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
@@ -36,10 +37,12 @@ export function Projects() {
                 <div className={`grid gap-8 p-6 lg:grid-cols-2 lg:p-8 ${index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
                   <div className="flex items-center justify-center rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-2">
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.25rem]">
-                      <img
+                      <Image
                         src={project.image.src}
                         alt={project.image.alt}
-                        className="h-full w-full object-cover"
+                        fill
+                        sizes="(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover"
                       />
                     </div>
                   </div>
@@ -95,11 +98,15 @@ export function Projects() {
                   className="group rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)]/80 p-5 text-left transition hover:border-[var(--accent)]"
                 >
                   <div className="overflow-hidden rounded-[1rem] border border-[var(--border)] bg-[var(--surface)]">
-                    <img
-                      src={project.image.src}
-                      alt={project.image.alt}
-                      className="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-                    />
+                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                      <Image
+                        src={project.image.src}
+                        alt={project.image.alt}
+                        fill
+                        sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                      />
+                    </div>
                   </div>
                   <p className="mt-4 font-ui-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
                     Other project
