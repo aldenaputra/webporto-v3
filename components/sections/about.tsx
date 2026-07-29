@@ -2,6 +2,7 @@ import { profile } from "@/data/profile";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SocialIcon } from "@/components/ui/social-icons";
 import { Tag } from "@/components/ui/tag";
+import { Mail } from "lucide-react";
 
 export function About() {
   return (
@@ -14,8 +15,9 @@ export function About() {
             description="A practitioner at the intersection of data, analytics, and security-aware systems."
           />
           <div className="mt-8 space-y-5 text-base leading-8 text-[var(--text-muted)]">
-            <p>{profile.bio}</p>
-            <p>{profile.tagline}</p>
+            <p>{profile.bio[0]}</p>
+            <p>{profile.bio[1]}</p>
+            <p>{profile.bio[2]}</p>
           </div>
         </div>
 
@@ -55,26 +57,9 @@ export function About() {
             <h3 className="font-ui-mono text-sm uppercase tracking-[0.2em] text-[var(--accent)]">
               Certifications
             </h3>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               {profile.certifications.map((certification) => (
-                <div
-                  key={certification.name}
-                  className="rounded-2xl border border-[var(--border)] bg-[var(--surface)]/90 p-4"
-                >
-                  <p className="font-medium text-[var(--text-primary)]">
-                    {certification.name}
-                  </p>
-                  {certification.issuer ? (
-                    <p className="mt-1 text-sm text-[var(--text-muted)]">
-                      {certification.issuer}
-                    </p>
-                  ) : null}
-                  {certification.date ? (
-                    <p className="mt-3 font-ui-mono text-xs text-[var(--accent)]">
-                      {certification.date}
-                    </p>
-                  ) : null}
-                </div>
+                <Tag key={certification.name}>{certification.name}</Tag>
               ))}
             </div>
           </div>
@@ -84,6 +69,16 @@ export function About() {
               Connect
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
+              <a
+                href={`mailto:${profile.contact.email}`}
+                aria-label="Email Alden"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--text-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              >
+                <span className="inline-flex size-8 items-center justify-center rounded-full bg-[var(--surface)]">
+                  <Mail aria-hidden="true" size={16} />
+                </span>
+                <span>Email</span>
+              </a>
               {profile.socials.map((social) => (
                 <a
                   key={social.label}

@@ -37,7 +37,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="// 03 — professional work experiences;"
           title="Experience"
-          description="Hands-on work across analytics, reporting, and security-aware operational systems."
+          description="An overview of my professional journey and key experiences."
         />
 
         <div className="mt-10 rounded-[2rem] border border-[var(--border)] bg-[var(--surface)]/70 p-4 shadow-sm sm:p-6 lg:p-8">
@@ -59,11 +59,10 @@ export function Experience() {
                   tabIndex={isActive ? 0 : -1}
                   onClick={() => setActiveCompany(index)}
                   onKeyDown={(event) => handleKeyDown(event, index)}
-                  className={`rounded-full border px-4 py-2 text-left font-ui-mono text-sm transition ${
-                    isActive
+                  className={`rounded-full border px-4 py-2 text-left font-ui-mono text-sm transition ${isActive
                       ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--surface)]"
                       : "border-[var(--border)] text-[var(--text-muted)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                  }`}
+                    }`}
                 >
                   {entry.company}
                 </button>

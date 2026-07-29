@@ -13,7 +13,7 @@ export interface Profile {
   roles: string[];
   availableForWork: boolean;
   tagline: string;
-  bio: string;
+  bio: string[];
   image: { src: string; alt: string };
   softSkills: string[];
   technicalSkills: { category: string; items: string[] }[];
@@ -23,6 +23,7 @@ export interface Profile {
   footer: { signOff: string; copyrightName: string };
 }
 export interface EducationEntry {
+  level?: string;
   institution: string;
   degree: string;
   startDate: string;
