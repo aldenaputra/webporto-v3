@@ -66,6 +66,12 @@ body {
 .skip-link:focus {
   transform: translateY(0);
 }
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

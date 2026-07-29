@@ -9,7 +9,7 @@ export function About() {
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-24">
         <div>
           <SectionHeading
-            eyebrow="// 02 — about"
+            eyebrow="// 01 — about me;"
             title="About"
             description="A practitioner at the intersection of data, analytics, and security-aware systems."
           />

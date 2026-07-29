@@ -35,7 +35,7 @@ export function Experience() {
     <section id="experience" className="border-b border-[var(--border)]">
       <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
         <SectionHeading
-          eyebrow="// 04 — experience"
+          eyebrow="// 03 — professional work experiences;"
           title="Experience"
           description="Hands-on work across analytics, reporting, and security-aware operational systems."
         />

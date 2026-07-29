@@ -6,7 +6,7 @@ export function Education() {
     <section id="education" className="border-b border-[var(--border)]">
       <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
         <SectionHeading
-          eyebrow="// 03 — education"
+          eyebrow="// 02 — education journey;"
           title="Education"
           description="A progression rooted in computer science, data systems, and security-aware computing."
         />

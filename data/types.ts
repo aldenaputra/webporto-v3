@@ -11,6 +11,7 @@ export interface NavigationItem {
 export interface Profile {
   name: string;
   roles: string[];
+  availableForWork: boolean;
   tagline: string;
   bio: string;
   image: { src: string; alt: string };

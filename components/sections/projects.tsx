@@ -21,7 +21,7 @@ export function Projects() {
       <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
         <ScrollReveal>
           <SectionHeading
-            eyebrow="// 06 — projects"
+            eyebrow="// 05 — personal and academic projects;"
             title="Projects"
             description="Selected work that spans security, data systems, and applied analytics."
           />

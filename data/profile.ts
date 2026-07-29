@@ -11,7 +11,8 @@ export const navigationItems: NavigationItem[] = [
 
 export const profile: Profile = {
   name: "Alden Putra",
-  roles: ["Data Engineer", "Security-aware Analyst"],
+  roles: ["Analytics Engineer", "Security-aware Analyst", "Decision Intelligence", "IT Risk & Governance"],
+  availableForWork: true,
   tagline:
     "Bridging data science, analytics, and engineering with security-aware data practices.",
   bio: "A Computer Science graduate with a bachelor’s specialization in Database Technology and a master’s specialization in Information Security Management, currently awaiting graduation. My work sits at the intersection of analytics, business intelligence, data operations, and security-aware information management.",

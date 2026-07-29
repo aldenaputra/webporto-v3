@@ -49,7 +49,7 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-transparent backdrop-blur-xl dark:border-white/5 dark:bg-transparent">
+    <header className="fixed inset-x-0 top-0 z-50 overflow-visible border-b border-black/5 bg-transparent backdrop-blur-xl dark:border-white/5 dark:bg-transparent">
       <div className="mx-auto flex h-[4.5rem] w-full max-w-6xl items-center justify-between gap-4 px-6 sm:px-8 lg:px-10">
         <a href="#hero" className="font-ui-mono shrink-0 text-sm font-medium">
           {profile.name}
@@ -97,9 +97,12 @@ export function Navbar() {
       {isMenuOpen ? (
         <div
           id="mobile-navigation"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--background)]/80 px-6 py-8 backdrop-blur-xl md:hidden"
+          className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-[var(--background)]/80 px-6 py-24 backdrop-blur-xl md:hidden"
         >
-          <nav aria-label="Mobile navigation" className="w-full max-w-sm rounded-[2rem] border border-[var(--border)] bg-[var(--surface)]/90 p-6 shadow-2xl">
+          <nav
+            aria-label="Mobile navigation"
+            className="w-full max-w-sm rounded-[2rem] border border-[var(--border)] bg-[var(--surface)]/90 p-6 shadow-2xl"
+          >
             {navigationItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
