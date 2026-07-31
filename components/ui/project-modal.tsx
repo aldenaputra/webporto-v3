@@ -20,7 +20,8 @@ export function ProjectModal({
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
-    triggerRef.current = previouslyFocused instanceof HTMLButtonElement ? previouslyFocused : null;
+    triggerRef.current =
+      previouslyFocused instanceof HTMLButtonElement ? previouslyFocused : null;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -77,7 +78,10 @@ export function ProjectModal({
         <div className="flex items-start justify-between border-b border-[var(--border)] px-6 py-5">
           <div>
             <p className="font-ui-mono text-sm text-[var(--accent)]">Project Details</p>
-            <h2 id={titleId} className="mt-2 text-xl font-semibold text-[var(--text-primary)]">
+            <h2
+              id={titleId}
+              className="mt-2 text-xl font-semibold text-[var(--text-primary)]"
+            >
               {project.title}
             </h2>
           </div>
@@ -108,7 +112,7 @@ export function ProjectModal({
           </p>
 
           <div className="mt-6">
-            <p className="font-ui-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+            <p className="font-ui-mono text-xs tracking-[0.2em] text-[var(--accent)] uppercase">
               Stack
             </p>
             <div className="mt-3 flex flex-wrap gap-2">

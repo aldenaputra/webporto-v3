@@ -29,25 +29,26 @@ function ExpandableSection({
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between py-1 text-left font-ui-mono text-xs font-medium text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors group cursor-pointer"
+        className="font-ui-mono group flex w-full cursor-pointer items-center justify-between py-1 text-left text-xs font-medium text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
       >
         <span className="flex items-center gap-2">
-          <Icon className="size-3.5 text-[var(--accent)] group-hover:scale-110 transition-transform" />
+          <Icon className="size-3.5 text-[var(--accent)] transition-transform group-hover:scale-110" />
           <span>{title}</span>
           {count !== undefined && count > 0 && (
-            <span className="rounded-full bg-[var(--accent)]/10 px-2 py-0.5 text-[10px] text-[var(--accent)] font-semibold">
+            <span className="rounded-full bg-[var(--accent)]/10 px-2 py-0.5 text-[10px] font-semibold text-[var(--accent)]">
               {count}
             </span>
           )}
         </span>
         <ChevronDown
-          className={`size-4 text-[var(--text-muted)] transition-transform duration-200 ${isOpen ? "rotate-180 text-[var(--accent)]" : ""
-            }`}
+          className={`size-4 text-[var(--text-muted)] transition-transform duration-200 ${
+            isOpen ? "rotate-180 text-[var(--accent)]" : ""
+          }`}
         />
       </button>
 
       {isOpen && (
-        <div className="mt-2.5 max-h-44 overflow-y-auto pr-1.5 text-xs leading-relaxed text-[var(--text-muted)] space-y-2 scrollbar-thin scrollbar-thumb-zinc-300 dark:scrollbar-thumb-zinc-700">
+        <div className="mt-2.5 max-h-44 scrollbar-thin scrollbar-thumb-zinc-300 space-y-2 overflow-y-auto pr-1.5 text-xs leading-relaxed text-[var(--text-muted)] dark:scrollbar-thumb-zinc-700">
           {children}
         </div>
       )}
@@ -83,12 +84,12 @@ export function Education() {
         </ScrollReveal>
 
         {/* Timeline container */}
-        <div className="mt-14 relative">
+        <div className="relative mt-14">
           {/* Horizontal Timeline Bar across top on desktop */}
-          <div className="hidden md:block absolute top-4 left-[16.66%] right-[16.66%] h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-fuchsia-500 rounded-full -z-10" />
+          <div className="absolute top-4 right-[16.66%] left-[16.66%] -z-10 hidden h-1 rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-fuchsia-500 md:block" />
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
             {education.map((entry, index) => {
               const theme = colorStyles[index % colorStyles.length];
 
@@ -99,20 +100,22 @@ export function Education() {
                   className="flex h-full flex-col"
                 >
                   {/* Timeline Circle Node */}
-                  <div className="hidden md:flex justify-center mb-6">
+                  <div className="mb-6 hidden justify-center md:flex">
                     <div
-                      className={`size-8 rounded-full border-4 ${theme.node} shadow-md flex items-center justify-center transition-transform hover:scale-110`}
+                      className={`size-8 rounded-full border-4 ${theme.node} flex items-center justify-center shadow-md transition-transform hover:scale-110`}
                     >
                       <div className="size-2 rounded-full bg-current" />
                     </div>
                   </div>
 
                   {/* Card Content */}
-                  <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full">
+                  <div className="flex h-full flex-col justify-between rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-sm transition-shadow hover:shadow-md">
                     <div>
                       {/* Level Badge */}
                       {entry.level && (
-                        <p className={`font-medium text-sm sm:text-base ${theme.badge}`}>
+                        <p
+                          className={`text-sm font-medium sm:text-base ${theme.badge}`}
+                        >
                           {entry.level}
                         </p>
                       )}
@@ -123,18 +126,18 @@ export function Education() {
                       </h3>
 
                       {/* Degree / Major */}
-                      <p className="mt-1 text-xs sm:text-sm text-[var(--text-muted)] leading-snug">
+                      <p className="mt-1 text-xs leading-snug text-[var(--text-muted)] sm:text-sm">
                         {entry.degree}
                       </p>
 
                       {/* Dates */}
-                      <p className="mt-2 font-ui-mono text-xs text-[var(--text-muted)]">
+                      <p className="font-ui-mono mt-2 text-xs text-[var(--text-muted)]">
                         {entry.startDate} - {entry.endDate}
                       </p>
 
                       {/* GPA / Grade */}
                       {entry.gpa && (
-                        <p className="mt-3 font-ui-mono text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+                        <p className="font-ui-mono mt-3 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
                           Grade: {entry.gpa}
                         </p>
                       )}
@@ -144,7 +147,7 @@ export function Education() {
                         <ul className="mt-3 space-y-1 text-xs text-[var(--text-muted)]">
                           {entry.honors.map((honor) => (
                             <li key={honor} className="flex items-center gap-1.5">
-                              <span className="size-1 rounded-full bg-[var(--text-muted)] shrink-0" />
+                              <span className="size-1 shrink-0 rounded-full bg-[var(--text-muted)]" />
                               <span>{honor}</span>
                             </li>
                           ))}
@@ -164,7 +167,7 @@ export function Education() {
                           <ul className="space-y-2">
                             {entry.activities.map((activity) => (
                               <li key={activity} className="flex items-start gap-2">
-                                <span className="mt-1.5 size-1 rounded-full bg-[var(--accent)] shrink-0" />
+                                <span className="mt-1.5 size-1 shrink-0 rounded-full bg-[var(--accent)]" />
                                 <span className="leading-snug">{activity}</span>
                               </li>
                             ))}
@@ -183,7 +186,7 @@ export function Education() {
                             {entry.courses.map((course) => (
                               <span
                                 key={course.code}
-                                className="font-ui-mono rounded-md border border-[var(--border)] bg-[var(--background)] px-2 py-0.5 text-[11px] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                                className="font-ui-mono rounded-md border border-[var(--border)] bg-[var(--background)] px-2 py-0.5 text-[11px] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
                                 title={`Course Code: ${course.code}`}
                               >
                                 {course.name}
@@ -203,4 +206,3 @@ export function Education() {
     </section>
   );
 }
-

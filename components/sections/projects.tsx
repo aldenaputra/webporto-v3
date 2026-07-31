@@ -14,7 +14,9 @@ const featuredProjects = projects.filter((project) => project.featured);
 const archivedProjects = projects.filter((project) => !project.featured);
 
 export function Projects() {
-  const [activeProject, setActiveProject] = useState<(typeof projects)[number] | null>(null);
+  const [activeProject, setActiveProject] = useState<(typeof projects)[number] | null>(
+    null,
+  );
 
   return (
     <section id="projects" className="border-b border-[var(--border)]">
@@ -37,12 +39,17 @@ export function Projects() {
               >
                 <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_19rem] lg:items-start lg:gap-12">
                   <div>
-                    <div className="flex items-center gap-3 font-ui-mono text-xs text-[var(--text-muted)]">
-                      <span className="text-[var(--accent)]">CASE {String(index + 1).padStart(2, "0")}</span>
-                      <span aria-hidden="true" className="h-px w-7 bg-[var(--border)]" />
+                    <div className="font-ui-mono flex items-center gap-3 text-xs text-[var(--text-muted)]">
+                      <span className="text-[var(--accent)]">
+                        CASE {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="h-px w-7 bg-[var(--border)]"
+                      />
                       <span>ENGINEERING STUDY</span>
                     </div>
-                    <h3 className="mt-5 max-w-3xl text-2xl font-semibold leading-tight text-[var(--text-primary)] sm:text-3xl">
+                    <h3 className="mt-5 max-w-3xl text-2xl leading-tight font-semibold text-[var(--text-primary)] sm:text-3xl">
                       {project.title}
                     </h3>
                     <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--text-muted)] sm:text-lg sm:leading-8">
@@ -52,7 +59,10 @@ export function Projects() {
                     {project.mobileHighlights?.length ? (
                       <div className="mt-7 grid gap-3 border-l-2 border-[var(--accent)]/40 pl-4 sm:grid-cols-3 sm:gap-5">
                         {project.mobileHighlights.map((highlight) => (
-                          <p key={highlight} className="text-sm leading-6 text-[var(--text-primary)]">
+                          <p
+                            key={highlight}
+                            className="text-sm leading-6 text-[var(--text-primary)]"
+                          >
                             {highlight}
                           </p>
                         ))}
@@ -81,7 +91,7 @@ export function Projects() {
                   </div>
 
                   <div className="border border-[var(--border)] bg-[var(--surface)] p-2 transition-colors duration-200 group-hover:border-[var(--accent)]/40">
-                    <div className="flex items-center justify-between border-b border-[var(--border)] px-2 py-2 font-ui-mono text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                    <div className="font-ui-mono flex items-center justify-between border-b border-[var(--border)] px-2 py-2 text-[10px] tracking-[0.16em] text-[var(--text-muted)] uppercase">
                       <span>Preview</span>
                       <span>{String(index + 1).padStart(2, "0")}</span>
                     </div>
@@ -128,10 +138,10 @@ export function Projects() {
                         {project.mobileDescription ?? project.description}
                       </p>
                     </div>
-                    <p className="hidden font-ui-mono text-xs leading-5 text-[var(--text-muted)] sm:block">
+                    <p className="font-ui-mono hidden text-xs leading-5 text-[var(--text-muted)] sm:block">
                       {project.stack.slice(0, 3).join(" · ")}
                     </p>
-                    <span className="inline-flex items-center gap-2 font-ui-mono text-xs text-[var(--text-muted)] transition-colors group-hover:text-[var(--accent)]">
+                    <span className="font-ui-mono inline-flex items-center gap-2 text-xs text-[var(--text-muted)] transition-colors group-hover:text-[var(--accent)]">
                       View case
                       <ArrowRight aria-hidden="true" size={15} />
                     </span>
@@ -153,7 +163,9 @@ export function Projects() {
 function IndexHeading({ label, count }: { label: string; count: number }) {
   return (
     <div className="flex items-center gap-4">
-      <p className="font-ui-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">{label}</p>
+      <p className="font-ui-mono text-xs tracking-[0.2em] text-[var(--accent)] uppercase">
+        {label}
+      </p>
       <span aria-hidden="true" className="h-px flex-1 bg-[var(--border)]" />
       <span className="font-ui-mono text-xs text-[var(--text-muted)]">
         {String(count).padStart(2, "0")}

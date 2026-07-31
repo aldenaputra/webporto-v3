@@ -14,7 +14,15 @@ export const experience: ExperienceEntry[] = [
       "Automated operational reports and maintained Python and Apps Script workflows to reduce manual effort.",
       "Resolved cross-functional data issues while coordinating with stakeholders in a fast-paced environment.",
     ],
-    stack: ["Python", "Apps Script", "Data Analytics", "Automation", "Reporting", "GCP", "Linux/Bash"],
+    stack: [
+      "Python",
+      "Apps Script",
+      "Data Analytics",
+      "Automation",
+      "Reporting",
+      "GCP",
+      "Linux/Bash",
+    ],
   },
   {
     company: "Toyota Astra Financial Services",

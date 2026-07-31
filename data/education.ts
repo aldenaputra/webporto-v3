@@ -45,7 +45,8 @@ export const education: EducationEntry[] = [
   {
     level: "Master's Degree",
     institution: "BINUS Graduate Program",
-    degree: "Magister Teknik Informatika (Fast-Track): Information Security Management Streaming",
+    degree:
+      "Magister Teknik Informatika (Fast-Track): Information Security Management Streaming",
     startDate: "Sept 2024",
     endDate: "Aug 2026",
     honors: ["Summa Cum Laude"],
@@ -55,7 +56,10 @@ export const education: EducationEntry[] = [
       "Teaching Volunteer about AI and Digital Marketing by Bina Nusantara Computer Club (BNCC) in Massive Online Open Course format",
     ],
     courses: [
-      { name: "Cases on Forensic Accounting and Corporate Governance", code: "ACCT8008044" },
+      {
+        name: "Cases on Forensic Accounting and Corporate Governance",
+        code: "ACCT8008044",
+      },
       { name: "Enterprise Network", code: "CPEN8006041" },
       { name: "Fundamental of Cybersecurity", code: "COMP8046041" },
       { name: "IT Risk Management and Audit", code: "COMP8042041" },
@@ -64,4 +68,3 @@ export const education: EducationEntry[] = [
     ],
   },
 ];
-

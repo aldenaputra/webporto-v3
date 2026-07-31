@@ -74,87 +74,90 @@ export function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const mobileMenu =
-    isMenuOpen
-      ? createPortal(
+  const mobileMenu = isMenuOpen
+    ? createPortal(
+        <div
+          id="mobile-navigation"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+          className="fixed inset-x-0 top-[4.5rem] bottom-0 z-[49] overflow-hidden lg:hidden"
+        >
+          {/* Pure Backdrop Blur Overlay (No dark shade) */}
           <div
-            id="mobile-navigation"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile navigation"
-            className="fixed inset-x-0 top-[4.5rem] bottom-0 z-[49] lg:hidden overflow-hidden"
+            aria-hidden="true"
+            onClick={closeMenu}
+            style={{
+              transition: `opacity ${TRANSITION_MS}ms ease, backdrop-filter ${TRANSITION_MS}ms ease`,
+            }}
+            className={`absolute inset-0 ${
+              isVisible
+                ? "opacity-100 backdrop-blur-sm"
+                : "opacity-0 backdrop-blur-none"
+            }`}
+          />
+
+          {/* Glass Slide-Down Menu Drawer */}
+          <nav
+            ref={menuRef}
+            aria-label="Mobile menu navigation"
+            style={{
+              transition: isVisible
+                ? `transform ${TRANSITION_MS}ms cubic-bezier(0.16, 1, 0.3, 1), opacity ${TRANSITION_MS}ms ease`
+                : `opacity ${TRANSITION_MS}ms ease`,
+            }}
+            className={`relative z-10 w-full border-b border-black/10 bg-white/20 px-4 py-3.5 shadow-lg backdrop-blur-2xl sm:px-6 dark:border-white/10 dark:bg-white/5 ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "pointer-events-none translate-y-0 opacity-0"
+            }`}
           >
-            {/* Pure Backdrop Blur Overlay (No dark shade) */}
-            <div
-              aria-hidden="true"
-              onClick={closeMenu}
-              style={{
-                transition: `opacity ${TRANSITION_MS}ms ease, backdrop-filter ${TRANSITION_MS}ms ease`,
-              }}
-              className={`absolute inset-0 ${
-                isVisible
-                  ? "opacity-100 backdrop-blur-sm"
-                  : "opacity-0 backdrop-blur-none"
-              }`}
-            />
-
-            {/* Glass Slide-Down Menu Drawer */}
-            <nav
-              ref={menuRef}
-              aria-label="Mobile menu navigation"
-              style={{
-                transition: isVisible
-                  ? `transform ${TRANSITION_MS}ms cubic-bezier(0.16, 1, 0.3, 1), opacity ${TRANSITION_MS}ms ease`
-                  : `opacity ${TRANSITION_MS}ms ease`,
-              }}
-              className={`relative z-10 w-full border-b border-black/10 dark:border-white/10 bg-white/20 dark:bg-white/5 backdrop-blur-2xl shadow-lg px-4 py-3.5 sm:px-6 ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-0 opacity-0 pointer-events-none"
-              }`}
-            >
-              <div className="mx-auto max-w-2xl">
-                {/* Header label */}
-                <div className="mb-2.5 flex items-center justify-between border-b border-black/5 dark:border-white/10 pb-2">
-                  <span className="font-ui-mono text-[11px] tracking-wider uppercase text-[var(--accent)] font-semibold">
-                    {"// Navigation"}
-                  </span>
-                  <span className="font-ui-mono text-[11px] text-[var(--text-muted)]">
-                    {navigationItems.length} Sections
-                  </span>
-                </div>
-
-                {/* Navigation Links Grid */}
-                <div className="grid gap-1 sm:grid-cols-2">
-                  {navigationItems.map((item) => (
-                    <a
-                      key={item.id}
-                      href={`#${item.id}`}
-                      onClick={closeMenu}
-                      className="block rounded-lg px-3 py-2 font-ui-mono text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--accent)]"
-                    >
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-
-                {/* Resume Download CTA */}
-                <div className="mt-3 pt-3 border-t border-black/5 dark:border-white/10">
-                  <a
-                    href="/CV ATS Alden V3.pdf"
-                    onClick={closeMenu}
-                    className="font-ui-mono flex w-full items-center justify-center gap-2 rounded-lg border border-black/10 dark:border-white/15 bg-white/20 dark:bg-white/5 py-2 px-3 text-xs font-medium text-[var(--text-primary)] shadow-xs transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                  >
-                    <Download aria-hidden="true" size={14} className="text-[var(--accent)]" />
-                    <span>Download CV / Resume</span>
-                  </a>
-                </div>
+            <div className="mx-auto max-w-2xl">
+              {/* Header label */}
+              <div className="mb-2.5 flex items-center justify-between border-b border-black/5 pb-2 dark:border-white/10">
+                <span className="font-ui-mono text-[11px] font-semibold tracking-wider text-[var(--accent)] uppercase">
+                  {"// Navigation"}
+                </span>
+                <span className="font-ui-mono text-[11px] text-[var(--text-muted)]">
+                  {navigationItems.length} Sections
+                </span>
               </div>
-            </nav>
-          </div>,
-          document.body,
-        )
-      : null;
+
+              {/* Navigation Links Grid */}
+              <div className="grid gap-1 sm:grid-cols-2">
+                {navigationItems.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={closeMenu}
+                    className="font-ui-mono block rounded-lg px-3 py-2 text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--accent)]"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+
+              {/* Resume Download CTA */}
+              <div className="mt-3 border-t border-black/5 pt-3 dark:border-white/10">
+                <a
+                  href="/CV ATS Alden V3.pdf"
+                  onClick={closeMenu}
+                  className="font-ui-mono flex w-full items-center justify-center gap-2 rounded-lg border border-black/10 bg-white/20 px-3 py-2 text-xs font-medium text-[var(--text-primary)] shadow-xs transition hover:border-[var(--accent)] hover:text-[var(--accent)] dark:border-white/15 dark:bg-white/5"
+                >
+                  <Download
+                    aria-hidden="true"
+                    size={14}
+                    className="text-[var(--accent)]"
+                  />
+                  <span>Download CV / Resume</span>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>,
+        document.body,
+      )
+    : null;
 
   return (
     <>
@@ -165,7 +168,10 @@ export function Navbar() {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
+          <nav
+            className="hidden items-center gap-5 lg:flex"
+            aria-label="Primary navigation"
+          >
             {navigationItems.map((item) => (
               <a
                 key={item.id}

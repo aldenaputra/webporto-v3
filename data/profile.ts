@@ -18,7 +18,7 @@ export const profile: Profile = {
   bio: [
     "A Computer Science graduate with a bachelor’s specialization in Database Technology and a master’s specialization in Information Security Management. My work sits at the intersection of analytics, business intelligence, data operations, and security-aware information management.",
     "Across roles in analytics, reporting, and security-aware operations, I have built dashboards, automated reporting workflows, translated SQL and HiveQL logic into analytics models, and supported risk-monitoring and governance-focused data processes in finance and logistics contexts.",
-    "Beyond the technical work, I am motivated by curiosity, continuous improvement, and building solutions that help people and organizations make better decisions with confidence."
+    "Beyond the technical work, I am motivated by curiosity, continuous improvement, and building solutions that help people and organizations make better decisions with confidence.",
   ],
   image: { src: "/pic3.png", alt: "Portrait of me" },
   softSkills: [

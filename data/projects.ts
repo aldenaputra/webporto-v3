@@ -7,7 +7,8 @@ export const projects: Project[] = [
     title: "WSTGv4 OWASP Scripting and Testing Project",
     description:
       "Developed comprehensive Python scripts and AI-assisted security tools to systematically execute the entire OWASP Web Security Testing Guide (WSTGv4) checklist. Automated end-to-end security testing procedures, vulnerability detection, and generated detailed testing reports to validate web application security posture.",
-    mobileDescription: "Automated OWASP WSTG security checks with Python and AI-assisted tooling.",
+    mobileDescription:
+      "Automated OWASP WSTG security checks with Python and AI-assisted tooling.",
     mobileHighlights: [
       "Built scripted security test workflows",
       "Mapped checks to WSTGv4 coverage",
@@ -17,7 +18,14 @@ export const projects: Project[] = [
       src: "/wstg.png",
       alt: "OWASP WSTG Security Testing workflow interface",
     },
-    stack: ["Python", "OWASP", "Cybersecurity", "Security Testing", "Web Security", "AI-Assisted Tools"],
+    stack: [
+      "Python",
+      "OWASP",
+      "Cybersecurity",
+      "Security Testing",
+      "Web Security",
+      "AI-Assisted Tools",
+    ],
     featured: true,
     links: [
       {
@@ -31,7 +39,8 @@ export const projects: Project[] = [
     title: "Network and Cybersecurity Labs",
     description:
       "Completed four in-depth cybersecurity assignments: (1) Penetration Testing Report on Kioptrix Level 1 System with vulnerability findings and remediation recommendations; (2) Memory Forensics Analysis on Cridex Malware using Volatility 2.0 for malware isolation and documentation; (3) TLS/SSL Decryption Analysis using Wireshark demonstrating protocol decryption techniques; (4) Hands-on Pyshark CLI-based Wireshark documentation and practical implementation.",
-    mobileDescription: "Four security labs covering penetration testing, forensics, TLS analysis, and Pyshark workflows.",
+    mobileDescription:
+      "Four security labs covering penetration testing, forensics, TLS analysis, and Pyshark workflows.",
     mobileHighlights: [
       "Documented findings and remediation",
       "Analyzed malware memory artifacts",
@@ -41,7 +50,15 @@ export const projects: Project[] = [
       src: "/network.png",
       alt: "Network and cybersecurity lab analysis",
     },
-    stack: ["Penetration Testing", "Wireshark", "Pyshark", "Volatility", "Memory Forensics", "TLS/SSL", "Network Analysis"],
+    stack: [
+      "Penetration Testing",
+      "Wireshark",
+      "Pyshark",
+      "Volatility",
+      "Memory Forensics",
+      "TLS/SSL",
+      "Network Analysis",
+    ],
     featured: true,
     links: [
       {
@@ -55,7 +72,8 @@ export const projects: Project[] = [
     title: "Enterprise Network Simulation",
     description:
       "Designed and simulated an enterprise-level network architecture with comprehensive metrics calculation including MTTR (Mean Time To Repair). Implemented GNS3 network environment with DHCP server configuration using keepalived, integrated DNS backup mechanisms, and implemented network security measures to simulate real-world enterprise infrastructure.",
-    mobileDescription: "Designed a simulated enterprise network with redundancy, security, and operational metrics.",
+    mobileDescription:
+      "Designed a simulated enterprise network with redundancy, security, and operational metrics.",
     mobileHighlights: [
       "Built GNS3 enterprise topology",
       "Configured DHCP and DNS backup",
@@ -65,7 +83,14 @@ export const projects: Project[] = [
       src: "/gns.png",
       alt: "Enterprise network topology diagram",
     },
-    stack: ["GNS3", "Network Design", "Network Security", "DHCP", "DNS", "Cisco Packet Tracer"],
+    stack: [
+      "GNS3",
+      "Network Design",
+      "Network Security",
+      "DHCP",
+      "DNS",
+      "Cisco Packet Tracer",
+    ],
     featured: true,
     links: [
       {
@@ -80,7 +105,8 @@ export const projects: Project[] = [
     title: "Data Clustering & Classification on Multiple Datasets",
     description:
       "Performed data clustering on trash pollution dataset using k-means model projected onto scatter plot and classification model on airplane schedule delay dataset in Cloudera Quickstart VM (Jupyter Notebook).",
-    mobileDescription: "Applied clustering and classification models in a Cloudera big data environment.",
+    mobileDescription:
+      "Applied clustering and classification models in a Cloudera big data environment.",
     mobileHighlights: [
       "Modeled trash pollution clusters",
       "Classified flight delay data",
@@ -90,7 +116,15 @@ export const projects: Project[] = [
       src: "/vis.png",
       alt: "Data clustering and classification visualization",
     },
-    stack: ["Python", "Jupyter Notebook", "Cloudera", "Machine Learning", "Apache Spark", "K-Means", "Classification"],
+    stack: [
+      "Python",
+      "Jupyter Notebook",
+      "Cloudera",
+      "Machine Learning",
+      "Apache Spark",
+      "K-Means",
+      "Classification",
+    ],
     featured: false,
     links: [
       {
@@ -104,7 +138,8 @@ export const projects: Project[] = [
     title: "SARIMAX Prediction Model on Online Retail Dataset",
     description:
       "Conducted exploratory data analysis (EDA) of an online retail dataset and executed model training to predict sales using SARIMAX algorithm in Python (Google Colaboratory).",
-    mobileDescription: "Forecasted online retail sales with EDA and SARIMAX model training in Python.",
+    mobileDescription:
+      "Forecasted online retail sales with EDA and SARIMAX model training in Python.",
     mobileHighlights: [
       "Prepared retail time-series data",
       "Trained SARIMAX forecasting model",
@@ -114,7 +149,15 @@ export const projects: Project[] = [
       src: "/sarimax.png",
       alt: "SARIMAX sales forecasting model results",
     },
-    stack: ["Python", "Pandas", "Machine Learning", "Time Series", "SARIMAX", "Google Colab", "EDA"],
+    stack: [
+      "Python",
+      "Pandas",
+      "Machine Learning",
+      "Time Series",
+      "SARIMAX",
+      "Google Colab",
+      "EDA",
+    ],
     featured: false,
     links: [
       {
@@ -128,7 +171,8 @@ export const projects: Project[] = [
     title: "Comparison of 4 SVM Kernels Performances in Aviation Satisfaction Dataset",
     description:
       "Conducted a complete process of KDD (Knowledge Discovery in Databases): exploratory data analysis (EDA), data preprocessing, outlier analysis, model fitting (classification prediction analysis), model evaluation, and permutation importance between SVM kernels (linear, RBF, polynomial, and sigmoid) on an aviation satisfaction dataset using Python.",
-    mobileDescription: "Compared four SVM kernels for aviation satisfaction classification.",
+    mobileDescription:
+      "Compared four SVM kernels for aviation satisfaction classification.",
     mobileHighlights: [
       "Ran full KDD workflow",
       "Evaluated four SVM kernels",
@@ -138,7 +182,15 @@ export const projects: Project[] = [
       src: "/datamining.png",
       alt: "SVM kernel comparison analysis visualization",
     },
-    stack: ["Python", "Pandas", "Machine Learning", "SVM", "Data Mining", "KDD", "Classification"],
+    stack: [
+      "Python",
+      "Pandas",
+      "Machine Learning",
+      "SVM",
+      "Data Mining",
+      "KDD",
+      "Classification",
+    ],
     featured: false,
     links: [
       {
@@ -152,7 +204,8 @@ export const projects: Project[] = [
     title: "SparkSQL Data Visualization in Jupyter Notebook",
     description:
       "Performed basic data visualization and queries on farm dataset using SparkSQL (PySpark) in Jupyter Notebook on Cloudera Quickstart Virtual Machine.",
-    mobileDescription: "Queried and visualized farm data using SparkSQL in Jupyter Notebook.",
+    mobileDescription:
+      "Queried and visualized farm data using SparkSQL in Jupyter Notebook.",
     mobileHighlights: [
       "Used SparkSQL queries",
       "Visualized dataset patterns",
@@ -162,7 +215,15 @@ export const projects: Project[] = [
       src: "/clasclus.png",
       alt: "SparkSQL data visualization charts",
     },
-    stack: ["Python", "SparkSQL", "PySpark", "Jupyter Notebook", "Cloudera", "Big Data", "Data Visualization"],
+    stack: [
+      "Python",
+      "SparkSQL",
+      "PySpark",
+      "Jupyter Notebook",
+      "Cloudera",
+      "Big Data",
+      "Data Visualization",
+    ],
     featured: false,
     links: [
       {
@@ -210,7 +271,17 @@ export const projects: Project[] = [
       src: "/travail.png",
       alt: "Travail e-ticketing website interface",
     },
-    stack: ["Laravel", "Vue.js", "MySQL", "PHP", "HTML", "CSS", "JavaScript", "Git", "Figma"],
+    stack: [
+      "Laravel",
+      "Vue.js",
+      "MySQL",
+      "PHP",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Figma",
+    ],
     featured: false,
     links: [
       {
@@ -224,7 +295,8 @@ export const projects: Project[] = [
     title: "Portfolio Website using Next.js",
     description:
       "Created and deployed a portfolio website using the Next.js framework and free hosting services from Vercel.",
-    mobileDescription: "Built and deployed a personal portfolio website with Next.js and Vercel.",
+    mobileDescription:
+      "Built and deployed a personal portfolio website with Next.js and Vercel.",
     mobileHighlights: [
       "Developed responsive portfolio UI",
       "Used Next.js and TypeScript",
@@ -248,7 +320,8 @@ export const projects: Project[] = [
     title: "KarenJET Database Design Project",
     description:
       "Led an enterprise database design project, developing a mitigation plan for system alteration and recovery for specific scenarios involving database transactions. Performed strict normalization from 1NF to 5NF and created diagrams to elaborate the database system.",
-    mobileDescription: "Led an enterprise database design project with normalization and recovery planning.",
+    mobileDescription:
+      "Led an enterprise database design project with normalization and recovery planning.",
     mobileHighlights: [
       "Designed enterprise database model",
       "Normalized schema from 1NF to 5NF",
@@ -258,7 +331,14 @@ export const projects: Project[] = [
       src: "/Database Design.png",
       alt: "KarenJET database design diagrams",
     },
-    stack: ["Database Design", "Normalization", "Visual Paradigm", "Excel", "Figma", "ERD"],
+    stack: [
+      "Database Design",
+      "Normalization",
+      "Visual Paradigm",
+      "Excel",
+      "Figma",
+      "ERD",
+    ],
     featured: false,
     links: [
       {
@@ -282,7 +362,14 @@ export const projects: Project[] = [
       src: "/javacruds.png",
       alt: "Java CRUD application console interface",
     },
-    stack: ["Java", "OOP", "CRUD", "Eclipse IDE", "Input Validation", "Search Algorithm"],
+    stack: [
+      "Java",
+      "OOP",
+      "CRUD",
+      "Eclipse IDE",
+      "Input Validation",
+      "Search Algorithm",
+    ],
     featured: false,
     links: [
       {
@@ -296,7 +383,8 @@ export const projects: Project[] = [
     title: "Algorithm Design in C",
     description:
       "Constructed several algorithms in C to solve logical problems and created flowcharts to describe the algorithm schemes.",
-    mobileDescription: "Solved logic problems with C algorithms and flowchart documentation.",
+    mobileDescription:
+      "Solved logic problems with C algorithms and flowchart documentation.",
     mobileHighlights: [
       "Designed multiple algorithms",
       "Documented logic with flowcharts",

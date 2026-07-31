@@ -13,7 +13,7 @@ export function About() {
           <SectionHeading
             eyebrow="// 01 — about me;"
             title="About"
-          // description="A practitioner at the intersection of data, analytics, and security-aware systems."
+            // description="A practitioner at the intersection of data, analytics, and security-aware systems."
           />
           <div className="mt-8 space-y-5 text-base leading-8 text-[var(--text-muted)]">
             <p>{profile.bio[0]}</p>
@@ -24,7 +24,7 @@ export function About() {
 
         <ScrollReveal delay={140} className="space-y-8">
           <div>
-            <h3 className="font-ui-mono text-sm uppercase tracking-[0.2em] text-[var(--accent)]">
+            <h3 className="font-ui-mono text-sm tracking-[0.2em] text-[var(--accent)] uppercase">
               Soft skills
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -35,7 +35,7 @@ export function About() {
           </div>
 
           <div>
-            <h3 className="font-ui-mono text-sm uppercase tracking-[0.2em] text-[var(--accent)]">
+            <h3 className="font-ui-mono text-sm tracking-[0.2em] text-[var(--accent)] uppercase">
               Technical skills
             </h3>
             <div className="mt-4 space-y-4">
@@ -55,7 +55,7 @@ export function About() {
           </div>
 
           <div>
-            <h3 className="font-ui-mono text-sm uppercase tracking-[0.2em] text-[var(--accent)]">
+            <h3 className="font-ui-mono text-sm tracking-[0.2em] text-[var(--accent)] uppercase">
               Certifications
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -66,7 +66,7 @@ export function About() {
           </div>
 
           <div>
-            <h3 className="font-ui-mono text-sm uppercase tracking-[0.2em] text-[var(--accent)]">
+            <h3 className="font-ui-mono text-sm tracking-[0.2em] text-[var(--accent)] uppercase">
               Connect
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">

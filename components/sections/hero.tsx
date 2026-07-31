@@ -30,20 +30,23 @@ export function Hero() {
 
     const fullRole = profile.roles[roleIndex];
 
-    const timeout = window.setTimeout(() => {
-      if (!isDeleting) {
-        if (displayRole.length < fullRole.length) {
-          setDisplayRole(fullRole.slice(0, displayRole.length + 1));
+    const timeout = window.setTimeout(
+      () => {
+        if (!isDeleting) {
+          if (displayRole.length < fullRole.length) {
+            setDisplayRole(fullRole.slice(0, displayRole.length + 1));
+          } else {
+            window.setTimeout(() => setIsDeleting(true), 1200);
+          }
+        } else if (displayRole.length > 0) {
+          setDisplayRole(fullRole.slice(0, displayRole.length - 1));
         } else {
-          window.setTimeout(() => setIsDeleting(true), 1200);
+          setIsDeleting(false);
+          setRoleIndex((roleIndex + 1) % profile.roles.length);
         }
-      } else if (displayRole.length > 0) {
-        setDisplayRole(fullRole.slice(0, displayRole.length - 1));
-      } else {
-        setIsDeleting(false);
-        setRoleIndex((roleIndex + 1) % profile.roles.length);
-      }
-    }, isDeleting ? 55 : 95);
+      },
+      isDeleting ? 55 : 95,
+    );
 
     return () => window.clearTimeout(timeout);
   }, [displayRole, isDeleting, reducedMotion, roleIndex]);
@@ -52,13 +55,16 @@ export function Hero() {
   const github = profile.socials.find((social) => social.label === "GitHub");
 
   return (
-    <section id="hero" className="relative flex min-h-[100svh] items-center border-b border-[var(--border)]">
+    <section
+      id="hero"
+      className="relative flex min-h-[100svh] items-center border-b border-[var(--border)]"
+    >
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:px-10 lg:py-28">
         {/* Profile Image Column (First on Mobile, Second on Desktop) */}
-        <div className="order-first flex flex-col items-center justify-center lg:order-last lg:block lg:relative lg:mx-auto lg:w-full lg:max-w-[36rem]">
+        <div className="order-first flex flex-col items-center justify-center lg:relative lg:order-last lg:mx-auto lg:block lg:w-full lg:max-w-[36rem]">
           {/* Mobile Spotlight Avatar View (< lg) */}
           <div className="relative flex flex-col items-center lg:hidden">
-            <div className="relative size-56 sm:size-64 overflow-hidden rounded-full border-4 border-[var(--border)] bg-[var(--surface)] p-1.5 shadow-2xl ring-4 ring-[var(--accent)]/15">
+            <div className="relative size-56 overflow-hidden rounded-full border-4 border-[var(--border)] bg-[var(--surface)] p-1.5 shadow-2xl ring-4 ring-[var(--accent)]/15 sm:size-64">
               <Image
                 src={profile.image.src}
                 alt={profile.image.alt}
@@ -70,14 +76,17 @@ export function Hero() {
             </div>
             {profile.availableForWork ? (
               <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] shadow-sm">
-                <span className="size-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.2)]" aria-hidden="true" />
+                <span
+                  className="size-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.2)]"
+                  aria-hidden="true"
+                />
                 <span>available for work</span>
               </div>
             ) : null}
           </div>
 
           {/* Desktop Full Portrait Card View (lg:) */}
-          <div className="hidden lg:block relative mx-auto w-full max-w-[36rem]">
+          <div className="relative mx-auto hidden w-full max-w-[36rem] lg:block">
             <div className="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-2 shadow-sm">
               <Image
                 src={profile.image.src}
@@ -91,7 +100,10 @@ export function Hero() {
             </div>
             {profile.availableForWork ? (
               <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/25 px-3 py-2 text-sm font-light text-white shadow-[0_8px_30px_rgba(255,255,255,0.2)] backdrop-blur-2xl backdrop-saturate-200 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-white/40 before:via-white/10 before:to-transparent before:content-[''] dark:border-white/15 dark:bg-white/10">
-                <span className="relative z-10 size-2.5 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.15)]" aria-hidden="true" />
+                <span
+                  className="relative z-10 size-2.5 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.15)]"
+                  aria-hidden="true"
+                />
                 <span className="relative z-10">available for work</span>
               </div>
             ) : null}
@@ -112,7 +124,11 @@ export function Hero() {
             <span
               aria-hidden="true"
               className={`ml-1 inline-block h-7 w-[0.12ch] rounded-[1px] bg-[var(--accent)] sm:h-10 ${reducedMotion ? "opacity-0" : ""}`}
-              style={reducedMotion ? undefined : { animation: "blink 0.9s step-end infinite" }}
+              style={
+                reducedMotion
+                  ? undefined
+                  : { animation: "blink 0.9s step-end infinite" }
+              }
             />
           </div>
           <p className="mt-2.5 text-base leading-relaxed text-[var(--text-muted)] sm:mt-5 sm:text-xl sm:leading-8">
@@ -122,7 +138,7 @@ export function Hero() {
           {/* CTA & Social Buttons Container */}
           <div className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
             {/* Row 1: Action CTA Buttons */}
-            <div className="flex items-center justify-center gap-3 w-full sm:w-auto">
+            <div className="flex w-full items-center justify-center gap-3 sm:w-auto">
               <a
                 href="#experience"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
@@ -138,7 +154,7 @@ export function Hero() {
             </div>
 
             {/* Row 2: Social Icons (Dedicated line on mobile, inline on desktop) */}
-            <div className="flex items-center justify-center gap-3 w-full sm:w-auto">
+            <div className="flex w-full items-center justify-center gap-3 sm:w-auto">
               {linkedin ? (
                 <a
                   href={linkedin.url}
@@ -177,7 +193,7 @@ export function Hero() {
       <a
         href="#about"
         aria-label="Scroll to about section"
-        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 items-center justify-center text-[var(--text-primary)] transition hover:scale-105 hover:text-[var(--accent)]"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center justify-center text-[var(--text-primary)] transition hover:scale-105 hover:text-[var(--accent)] sm:flex"
       >
         <svg
           aria-hidden="true"
