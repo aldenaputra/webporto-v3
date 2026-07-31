@@ -1,6 +1,7 @@
 import { profile } from "@/data/profile";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SocialIcon } from "@/components/ui/social-icons";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Tag } from "@/components/ui/tag";
 import { Mail } from "lucide-react";
 
@@ -8,20 +9,20 @@ export function About() {
   return (
     <section id="about" className="border-b border-[var(--border)]">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-24">
-        <div>
+        <ScrollReveal>
           <SectionHeading
             eyebrow="// 01 — about me;"
             title="About"
-            description="A practitioner at the intersection of data, analytics, and security-aware systems."
+          // description="A practitioner at the intersection of data, analytics, and security-aware systems."
           />
           <div className="mt-8 space-y-5 text-base leading-8 text-[var(--text-muted)]">
             <p>{profile.bio[0]}</p>
             <p>{profile.bio[1]}</p>
             <p>{profile.bio[2]}</p>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="space-y-8">
+        <ScrollReveal delay={140} className="space-y-8">
           <div>
             <h3 className="font-ui-mono text-sm uppercase tracking-[0.2em] text-[var(--accent)]">
               Soft skills
@@ -96,7 +97,7 @@ export function About() {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

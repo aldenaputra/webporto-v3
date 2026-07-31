@@ -40,10 +40,14 @@ export interface ExperienceEntry {
   endDate?: string | "present";
   bullets: string[];
   stack: string[];
+  image?: string;
+  location?: string;
+  type?: string;
 }
 export interface Publication {
   title: string;
   venue: string;
+  conferenceName: string;
   year: number;
   abstract: string;
   links: { label: string; url: string }[];
@@ -52,6 +56,8 @@ export interface Project {
   slug: string;
   title: string;
   description: string;
+  mobileDescription?: string;
+  mobileHighlights?: string[];
   image: { src: string; alt: string };
   stack: string[];
   featured: boolean;

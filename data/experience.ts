@@ -2,22 +2,28 @@ import type { ExperienceEntry } from "./types";
 
 export const experience: ExperienceEntry[] = [
   {
-    company: "Shopee SPX Express",
+    company: "Shopee (SPX) Express",
     role: "Data Analyst",
-    startDate: "2025",
-    endDate: "present",
+    startDate: "Feb 2026",
+    endDate: "Apr 2026",
+    location: "Jakarta, Indonesia",
+    type: "Full-time",
+    image: "/spx.jpg",
     bullets: [
       "Supported logistics analytics across first mile, middle mile, last mile, and non-courier fulfillment processes.",
       "Automated operational reports and maintained Python and Apps Script workflows to reduce manual effort.",
       "Resolved cross-functional data issues while coordinating with stakeholders in a fast-paced environment.",
     ],
-    stack: ["Python", "Apps Script", "Data Analytics", "Automation", "Reporting"],
+    stack: ["Python", "Apps Script", "Data Analytics", "Automation", "Reporting", "GCP", "Linux/Bash"],
   },
   {
     company: "Toyota Astra Financial Services",
     role: "Reporting Analyst Intern",
-    startDate: "2024",
-    endDate: "2024",
+    startDate: "Jul 2024",
+    endDate: "Sep 2024",
+    location: "Jakarta, Indonesia",
+    type: "Internship",
+    image: "/RATAFS.png",
     bullets: [
       "Built reporting outputs with Microsoft Power BI and DAX for data-driven business reporting.",
       "Worked with semantic modeling, reconciliation, and data governance practices in a regulated setting.",
@@ -28,8 +34,11 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Toyota Astra Financial Services",
     role: "Data Scientist Intern",
-    startDate: "2023",
-    endDate: "2023",
+    startDate: "Feb 2024",
+    endDate: "Jun 2024",
+    location: "Jakarta, Indonesia",
+    type: "MSIB Kampus Merdeka",
+    image: "/msib.jpg",
     bullets: [
       "Built internal HR analytics outputs using Python, Power BI, and Excel.",
       "Applied machine learning workflows to support analytical decision-making for internal operations.",

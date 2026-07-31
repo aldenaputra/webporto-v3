@@ -25,7 +25,6 @@ export function Hero() {
 
   useEffect(() => {
     if (reducedMotion || profile.roles.length === 0) {
-      setDisplayRole(profile.roles[0] ?? "");
       return;
     }
 
@@ -103,12 +102,12 @@ export function Hero() {
         <div className="order-last mx-auto max-w-2xl text-center lg:order-first lg:mx-0 lg:text-left">
           {/* italic */}
           <p className="font-ui-mono text-sm text-[var(--accent)]">
-            // 00 - welcome to my portfolio;
+            {"// 00 - welcome to my portfolio;"}
           </p>
           <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:mt-5 sm:text-6xl lg:text-7xl">
             {profile.name}
           </h1>
-          <div className="mt-2.5 flex min-h-10 items-center justify-center text-xl font-medium text-[var(--text-muted)] sm:mt-5 sm:text-3xl lg:justify-start lg:text-[2.15rem]">
+          <div className="mt-2.5 flex min-h-10 items-center justify-center text-xl font-medium text-[var(--text-muted)] sm:mt-5 sm:min-h-12 sm:text-3xl lg:justify-start lg:text-[2.15rem]">
             <span className="font-ui-mono text-[var(--accent)]">{displayRole}</span>
             <span
               aria-hidden="true"

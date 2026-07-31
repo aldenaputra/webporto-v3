@@ -11,7 +11,7 @@ export const navigationItems: NavigationItem[] = [
 
 export const profile: Profile = {
   name: "Alden",
-  roles: ["Analytics Engineer", "Security-aware Analyst", "Decisison Intelligence"],
+  roles: ["Analytics Engineer", "Security-aware Analyst", "Decision Intelligence"],
   availableForWork: true,
   tagline:
     "Bridging data science, analytics, and engineering with security-aware data practices.",

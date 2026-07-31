@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { education } from "@/data/education";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ChevronDown, BookOpen, Users } from "lucide-react";
 
 interface ExpandableSectionProps {
@@ -73,11 +74,13 @@ export function Education() {
   return (
     <section id="education" className="border-b border-[var(--border)]">
       <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-8 lg:px-10 lg:py-24">
-        <SectionHeading
-          eyebrow="// 02 — education journey;"
-          title="Education"
-          description="My academic journey from high school to master's degree."
-        />
+        <ScrollReveal>
+          <SectionHeading
+            eyebrow="// 02 — education journey;"
+            title="Education"
+            description="My academic journey from high school to master's degree."
+          />
+        </ScrollReveal>
 
         {/* Timeline container */}
         <div className="mt-14 relative">
@@ -90,7 +93,11 @@ export function Education() {
               const theme = colorStyles[index % colorStyles.length];
 
               return (
-                <div key={`${entry.institution}-${entry.degree}`} className="flex flex-col">
+                <ScrollReveal
+                  key={`${entry.institution}-${entry.degree}`}
+                  delay={index * 110}
+                  className="flex h-full flex-col"
+                >
                   {/* Timeline Circle Node */}
                   <div className="hidden md:flex justify-center mb-6">
                     <div
@@ -187,7 +194,7 @@ export function Education() {
                       ) : null}
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { projects } from "@/data/projects";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -10,11 +10,11 @@ import { Tag } from "@/components/ui/tag";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ProjectModal } from "@/components/ui/project-modal";
 
+const featuredProjects = projects.filter((project) => project.featured);
+const archivedProjects = projects.filter((project) => !project.featured);
+
 export function Projects() {
   const [activeProject, setActiveProject] = useState<(typeof projects)[number] | null>(null);
-
-  const featuredProjects = useMemo(() => projects.filter((project) => project.featured), []);
-  const otherProjects = useMemo(() => projects.filter((project) => !project.featured), []);
 
   return (
     <section id="projects" className="border-b border-[var(--border)]">
@@ -27,36 +27,40 @@ export function Projects() {
           />
         </ScrollReveal>
 
-        <div className="mt-10 space-y-6">
-          <ScrollReveal className="space-y-6">
+        <div className="mt-12 space-y-16 lg:mt-16 lg:space-y-20">
+          <ScrollReveal className="space-y-5">
+            <IndexHeading label="Selected case files" count={featuredProjects.length} />
             {featuredProjects.map((project, index) => (
               <article
                 key={project.slug}
-                className="overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)]/80 shadow-sm"
+                className="group border-y border-[var(--border)] py-7 transition-colors duration-200 hover:border-[var(--accent)]/50 sm:py-9"
               >
-                <div className={`grid gap-8 p-6 lg:grid-cols-2 lg:p-8 ${index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                  <div className="flex items-center justify-center rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-2">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.25rem]">
-                      <Image
-                        src={project.image.src}
-                        alt={project.image.alt}
-                        fill
-                        sizes="(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw"
-                        className="object-cover"
-                      />
+                <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_19rem] lg:items-start lg:gap-12">
+                  <div>
+                    <div className="flex items-center gap-3 font-ui-mono text-xs text-[var(--text-muted)]">
+                      <span className="text-[var(--accent)]">CASE {String(index + 1).padStart(2, "0")}</span>
+                      <span aria-hidden="true" className="h-px w-7 bg-[var(--border)]" />
+                      <span>ENGINEERING STUDY</span>
                     </div>
-                  </div>
-
-                  <div className="flex flex-col justify-center">
-                    <p className="font-ui-mono text-sm text-[var(--accent)]">Selected work</p>
-                    <h3 className="mt-3 text-2xl font-semibold text-[var(--text-primary)]">
+                    <h3 className="mt-5 max-w-3xl text-2xl font-semibold leading-tight text-[var(--text-primary)] sm:text-3xl">
                       {project.title}
                     </h3>
-                    <p className="mt-4 text-base leading-8 text-[var(--text-muted)]">
+                    <p className="mt-4 max-w-3xl text-base leading-7 text-[var(--text-muted)] sm:text-lg sm:leading-8">
                       {project.description}
                     </p>
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {project.stack.map((item) => (
+
+                    {project.mobileHighlights?.length ? (
+                      <div className="mt-7 grid gap-3 border-l-2 border-[var(--accent)]/40 pl-4 sm:grid-cols-3 sm:gap-5">
+                        {project.mobileHighlights.map((highlight) => (
+                          <p key={highlight} className="text-sm leading-6 text-[var(--text-primary)]">
+                            {highlight}
+                          </p>
+                        ))}
+                      </div>
+                    ) : null}
+
+                    <div className="mt-7 flex flex-wrap gap-2">
+                      {project.stack.slice(0, 5).map((item) => (
                         <Tag key={item}>{item}</Tag>
                       ))}
                     </div>
@@ -67,20 +71,34 @@ export function Projects() {
                           href={link.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-3.5 py-2 text-sm text-[var(--text-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                          className="inline-flex items-center gap-2 rounded-md border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2 text-sm font-medium text-[var(--text-primary)] transition hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
                         >
                           {link.label}
-                          <ArrowUpRight aria-hidden="true" size={14} />
+                          <ArrowUpRight aria-hidden="true" size={15} />
                         </a>
                       ))}
-                      <button
-                        type="button"
-                        onClick={() => setActiveProject(project)}
-                        className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-3.5 py-2 text-sm text-[var(--text-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                      >
-                        View details
-                        <ArrowUpRight aria-hidden="true" size={14} />
-                      </button>
+                    </div>
+                  </div>
+
+                  <div className="border border-[var(--border)] bg-[var(--surface)] p-2 transition-colors duration-200 group-hover:border-[var(--accent)]/40">
+                    <div className="flex items-center justify-between border-b border-[var(--border)] px-2 py-2 font-ui-mono text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                      <span>Preview</span>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                    </div>
+                    <div
+                      className="relative mt-2 aspect-[4/3] overflow-hidden bg-[var(--background)]"
+                      style={{
+                        backgroundImage:
+                          "repeating-linear-gradient(135deg, transparent 0 8px, color-mix(in srgb, var(--border) 72%, transparent) 8px 10px)",
+                      }}
+                    >
+                      <Image
+                        src={project.image.src}
+                        alt={project.image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 304px, (min-width: 640px) 50vw, 100vw"
+                        className="object-contain p-2"
+                      />
                     </div>
                   </div>
                 </div>
@@ -88,39 +106,38 @@ export function Projects() {
             ))}
           </ScrollReveal>
 
-          {otherProjects.length ? (
-            <ScrollReveal className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {otherProjects.map((project) => (
-                <button
-                  key={project.slug}
-                  type="button"
-                  onClick={() => setActiveProject(project)}
-                  className="group rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)]/80 p-5 text-left transition hover:border-[var(--accent)]"
-                >
-                  <div className="overflow-hidden rounded-[1rem] border border-[var(--border)] bg-[var(--surface)]">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden">
-                      <Image
-                        src={project.image.src}
-                        alt={project.image.alt}
-                        fill
-                        sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-                        className="object-cover transition duration-300 group-hover:scale-[1.02]"
-                      />
+          {archivedProjects.length ? (
+            <ScrollReveal>
+              <IndexHeading label="Index" count={archivedProjects.length} />
+              <div className="mt-5 border-y border-[var(--border)]">
+                {archivedProjects.map((project, index) => (
+                  <button
+                    key={project.slug}
+                    type="button"
+                    onClick={() => setActiveProject(project)}
+                    className="group grid w-full gap-3 border-b border-[var(--border)] px-1 py-5 text-left transition-colors last:border-b-0 hover:bg-[var(--surface)] sm:grid-cols-[3.5rem_minmax(0,1fr)_minmax(12rem,0.7fr)_auto] sm:items-center sm:gap-5 sm:px-3"
+                  >
+                    <span className="font-ui-mono text-xs text-[var(--accent)]">
+                      {String(index + featuredProjects.length + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="text-base font-medium text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)]">
+                        {project.title}
+                      </h3>
+                      <p className="mt-1 text-sm leading-6 text-[var(--text-muted)] sm:hidden">
+                        {project.mobileDescription ?? project.description}
+                      </p>
                     </div>
-                  </div>
-                  <p className="mt-4 font-ui-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-                    Other project
-                  </p>
-                  <h3 className="mt-2 text-lg font-semibold text-[var(--text-primary)]">
-                    {project.title}
-                  </h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.stack.slice(0, 3).map((item) => (
-                      <Tag key={item}>{item}</Tag>
-                    ))}
-                  </div>
-                </button>
-              ))}
+                    <p className="hidden font-ui-mono text-xs leading-5 text-[var(--text-muted)] sm:block">
+                      {project.stack.slice(0, 3).join(" · ")}
+                    </p>
+                    <span className="inline-flex items-center gap-2 font-ui-mono text-xs text-[var(--text-muted)] transition-colors group-hover:text-[var(--accent)]">
+                      View case
+                      <ArrowRight aria-hidden="true" size={15} />
+                    </span>
+                  </button>
+                ))}
+              </div>
             </ScrollReveal>
           ) : null}
         </div>
@@ -130,5 +147,17 @@ export function Projects() {
         <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
       ) : null}
     </section>
+  );
+}
+
+function IndexHeading({ label, count }: { label: string; count: number }) {
+  return (
+    <div className="flex items-center gap-4">
+      <p className="font-ui-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">{label}</p>
+      <span aria-hidden="true" className="h-px flex-1 bg-[var(--border)]" />
+      <span className="font-ui-mono text-xs text-[var(--text-muted)]">
+        {String(count).padStart(2, "0")}
+      </span>
+    </div>
   );
 }

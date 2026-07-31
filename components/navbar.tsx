@@ -9,15 +9,11 @@ import { ThemeToggle } from "./theme-toggle";
 const TRANSITION_MS = 300;
 
 export function Navbar() {
-  const [activeSection, setActiveSection] = useState("hero");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const menuRef = useRef<HTMLElement | null>(null);
+  const menuTriggerRef = useRef<HTMLButtonElement | null>(null);
 
   const openMenu = () => {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
@@ -35,50 +31,51 @@ export function Navbar() {
   const toggleMenu = () => (isMenuOpen ? closeMenu() : openMenu());
 
   useEffect(() => {
-    const sections = navigationItems
-      .map((item) => document.getElementById(item.id))
-      .filter(Boolean) as HTMLElement[];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visibleEntry) {
-          setActiveSection(visibleEntry.target.id);
-        }
-      },
-      {
-        rootMargin: "-40% 0px -55% 0px",
-        threshold: [0.2, 0.4, 0.6],
-      },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
     if (!isMenuOpen) return;
 
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const menuTrigger = menuTriggerRef.current;
+    const focusableSelector =
+      'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    const getFocusableElements = () =>
+      menuRef.current?.querySelectorAll<HTMLElement>(focusableSelector) ?? [];
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeMenu();
+      if (e.key === "Escape") {
+        closeMenu();
+        return;
+      }
+
+      if (e.key !== "Tab") return;
+
+      const focusableElements = getFocusableElements();
+      const firstFocusable = focusableElements[0];
+      const lastFocusable = focusableElements[focusableElements.length - 1];
+
+      if (!firstFocusable || !lastFocusable) {
+        e.preventDefault();
+      } else if (e.shiftKey && document.activeElement === firstFocusable) {
+        e.preventDefault();
+        lastFocusable.focus();
+      } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+        e.preventDefault();
+        firstFocusable.focus();
+      }
     };
 
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleKeyDown);
+    getFocusableElements()[0]?.focus();
 
     return () => {
       document.body.style.overflow = "";
       document.removeEventListener("keydown", handleKeyDown);
+      (menuTrigger ?? previouslyFocused)?.focus();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMenuOpen]);
 
   const mobileMenu =
-    isMenuOpen && mounted
+    isMenuOpen
       ? createPortal(
           <div
             id="mobile-navigation"
@@ -103,6 +100,7 @@ export function Navbar() {
 
             {/* Glass Slide-Down Menu Drawer */}
             <nav
+              ref={menuRef}
               aria-label="Mobile menu navigation"
               style={{
                 transition: isVisible
@@ -119,7 +117,7 @@ export function Navbar() {
                 {/* Header label */}
                 <div className="mb-2.5 flex items-center justify-between border-b border-black/5 dark:border-white/10 pb-2">
                   <span className="font-ui-mono text-[11px] tracking-wider uppercase text-[var(--accent)] font-semibold">
-                    // Navigation
+                    {"// Navigation"}
                   </span>
                   <span className="font-ui-mono text-[11px] text-[var(--text-muted)]">
                     {navigationItems.length} Sections
@@ -143,7 +141,7 @@ export function Navbar() {
                 {/* Resume Download CTA */}
                 <div className="mt-3 pt-3 border-t border-black/5 dark:border-white/10">
                   <a
-                    href="/CV Alden Ardiwinata Putra 2026.pdf"
+                    href="/CV ATS Alden V3.pdf"
                     onClick={closeMenu}
                     className="font-ui-mono flex w-full items-center justify-center gap-2 rounded-lg border border-black/10 dark:border-white/15 bg-white/20 dark:bg-white/5 py-2 px-3 text-xs font-medium text-[var(--text-primary)] shadow-xs transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
                   >
@@ -181,7 +179,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-1.5">
             <a
-              href="/CV Alden Ardiwinata Putra 2026.pdf"
+              href="/CV ATS Alden V3.pdf"
               className="font-ui-mono inline-flex items-center gap-2 rounded-md border border-[var(--border)] px-3 py-2 text-xs"
             >
               <Download aria-hidden="true" size={14} />
@@ -197,6 +195,7 @@ export function Navbar() {
               aria-expanded={isMenuOpen}
               aria-controls="mobile-navigation"
               onClick={toggleMenu}
+              ref={menuTriggerRef}
             >
               <span
                 className="inline-flex items-center justify-center transition-transform duration-300"

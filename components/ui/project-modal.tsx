@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useId, useRef } from "react";
-import { X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 
 import type { Project } from "@/data/types";
 import { Tag } from "@/components/ui/tag";
@@ -72,11 +72,11 @@ export function ProjectModal({
         aria-modal="true"
         aria-labelledby={titleId}
         tabIndex={-1}
-        className="max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] shadow-2xl"
+        className="max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl"
       >
         <div className="flex items-start justify-between border-b border-[var(--border)] px-6 py-5">
           <div>
-            <p className="font-ui-mono text-sm text-[var(--accent)]">Project details</p>
+            <p className="font-ui-mono text-sm text-[var(--accent)]">Project Details</p>
             <h2 id={titleId} className="mt-2 text-xl font-semibold text-[var(--text-primary)]">
               {project.title}
             </h2>
@@ -84,7 +84,7 @@ export function ProjectModal({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full border border-[var(--border)] p-2 text-[var(--text-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            className="rounded-md border border-[var(--border)] p-2 text-[var(--text-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
             aria-label="Close project details"
           >
             <X aria-hidden="true" size={16} />
@@ -92,14 +92,14 @@ export function ProjectModal({
         </div>
 
         <div className="max-h-[70vh] overflow-y-auto px-6 py-6">
-          <div className="overflow-hidden rounded-[1.25rem] border border-[var(--border)]">
-            <div className="relative aspect-[4/3] w-full overflow-hidden">
+          <div className="overflow-hidden rounded-md border border-[var(--border)] bg-[var(--background)]">
+            <div className="relative aspect-video w-full overflow-hidden">
               <Image
                 src={project.image.src}
                 alt={project.image.alt}
                 fill
-                sizes="(min-width: 1280px) 60vw, 100vw"
-                className="object-cover"
+                sizes="(min-width: 768px) 720px, calc(100vw - 3rem)"
+                className="object-contain"
               />
             </div>
           </div>
@@ -126,9 +126,10 @@ export function ProjectModal({
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center rounded-full border border-[var(--border)] px-3.5 py-2 text-sm text-[var(--text-muted)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="inline-flex items-center gap-2 rounded-md border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2 text-sm font-medium text-[var(--text-primary)] transition hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
                 >
                   {link.label}
+                  <ArrowUpRight aria-hidden="true" size={15} />
                 </a>
               ))}
             </div>

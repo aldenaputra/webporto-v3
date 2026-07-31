@@ -6,10 +6,12 @@ export function ScrollReveal({
   children,
   className = "",
   once = true,
+  delay = 0,
 }: {
   children: React.ReactNode;
   className?: string;
   once?: boolean;
+  delay?: number;
 }) {
   const [isVisible, setIsVisible] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -23,7 +25,6 @@ export function ScrollReveal({
     mediaQuery.addEventListener("change", updateReducedMotion);
 
     if (reducedMotion) {
-      setIsVisible(true);
       return () => mediaQuery.removeEventListener("change", updateReducedMotion);
     }
 
@@ -57,6 +58,7 @@ export function ScrollReveal({
   return (
     <div
       ref={elementRef}
+      style={{ transitionDelay: reducedMotion ? "0ms" : `${delay}ms` }}
       className={`${className} transition-all duration-700 ease-out ${
         isVisible || reducedMotion
           ? "translate-y-0 opacity-100"

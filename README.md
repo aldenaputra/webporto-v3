@@ -18,7 +18,7 @@ Portfolio content lives in the `/data` modules and is consumed by the sections t
 
 ## Required assets
 
-- `public/CV Alden Ardiwinata Putra 2026.pdf`
+- `public/CV ATS Alden V3.pdf`
 - `public/pic2.png`
 - Project images referenced by the project entries in `data/projects.ts`
 

@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { profile } from "@/data/profile";
 import "../styles/globals.css";
 
 const geistSans = Geist({
@@ -18,7 +19,20 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = { title: "Portfolio" };
+export const metadata: Metadata = {
+  title: `${profile.name} | Analytics Engineer`,
+  description: profile.tagline,
+  openGraph: {
+    title: `${profile.name} | Analytics Engineer`,
+    description: profile.tagline,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: `${profile.name} | Analytics Engineer`,
+    description: profile.tagline,
+  },
+};
 
 export default function RootLayout({
   children,
