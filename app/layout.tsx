@@ -20,16 +20,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${profile.name} | Analytics Engineer`,
+  title: "Alden's Portfolio",
   description: profile.tagline,
   openGraph: {
-    title: `${profile.name} | Analytics Engineer`,
+    title: "Alden's Portfolio",
     description: profile.tagline,
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: `${profile.name} | Analytics Engineer`,
+    title: "Alden's Portfolio",
     description: profile.tagline,
   },
 };
