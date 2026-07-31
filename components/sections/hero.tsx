@@ -59,12 +59,12 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-[100svh] items-center border-b border-[var(--border)]"
     >
-      <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:px-10 lg:py-28">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 pb-20 pt-28 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:px-10 lg:py-28">
         {/* Profile Image Column (First on Mobile, Second on Desktop) */}
         <div className="order-first flex flex-col items-center justify-center lg:relative lg:order-last lg:mx-auto lg:block lg:w-full lg:max-w-[36rem]">
           {/* Mobile Spotlight Avatar View (< lg) */}
-          <div className="relative flex flex-col items-center lg:hidden">
-            <div className="relative size-56 overflow-hidden rounded-full border-4 border-[var(--border)] bg-[var(--surface)] p-1.5 shadow-2xl ring-4 ring-[var(--accent)]/15 sm:size-64">
+          <div className="relative lg:hidden">
+            <div className="relative size-48 overflow-hidden rounded-full border-4 border-[var(--border)] bg-[var(--surface)] p-1.5 shadow-2xl ring-4 ring-[var(--accent)]/15 sm:size-56">
               <Image
                 src={profile.image.src}
                 alt={profile.image.alt}
@@ -75,12 +75,12 @@ export function Hero() {
               />
             </div>
             {profile.availableForWork ? (
-              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] shadow-sm">
+              <div className="absolute left-1/2 top-full mt-1.5 inline-flex -translate-x-1/2 items-center gap-1 whitespace-nowrap rounded-full border border-[var(--border)] bg-white px-2 py-0.5 text-[9px] font-medium text-[var(--text-primary)] shadow-sm backdrop-blur-sm dark:border-white/20 dark:bg-black/45 dark:text-white">
                 <span
-                  className="size-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.2)]"
+                  className="size-1 rounded-full bg-emerald-500 shadow-[0_0_0_2px_rgba(16,185,129,0.2)]"
                   aria-hidden="true"
                 />
-                <span>available for work</span>
+                <span>Available for work</span>
               </div>
             ) : null}
           </div>
@@ -99,12 +99,12 @@ export function Hero() {
               />
             </div>
             {profile.availableForWork ? (
-              <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/25 px-3 py-2 text-sm font-light text-white shadow-[0_8px_30px_rgba(255,255,255,0.2)] backdrop-blur-2xl backdrop-saturate-200 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-white/40 before:via-white/10 before:to-transparent before:content-[''] dark:border-white/15 dark:bg-white/10">
+              <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/40 bg-white px-3 py-2 text-sm font-medium text-[var(--text-primary)] shadow-sm backdrop-blur-sm dark:border-white/20 dark:bg-black/45 dark:text-white">
                 <span
-                  className="relative z-10 size-2.5 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.15)]"
+                  className="size-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.2)]"
                   aria-hidden="true"
                 />
-                <span className="relative z-10">available for work</span>
+                <span>Available for work</span>
               </div>
             ) : null}
           </div>
