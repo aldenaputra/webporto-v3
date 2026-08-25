@@ -7,7 +7,7 @@ export const experience: ExperienceEntry[] = [
     startDate: "Feb 2026",
     endDate: "Apr 2026",
     location: "Jakarta, Indonesia",
-    type: "Full-time",
+    type: "Contract, Project-Based",
     image: "/spx.jpg",
     bullets: [
       "Supported logistics analytics across first mile, middle mile, last mile, and non-courier fulfillment processes.",
@@ -45,7 +45,7 @@ export const experience: ExperienceEntry[] = [
     startDate: "Feb 2024",
     endDate: "Jun 2024",
     location: "Jakarta, Indonesia",
-    type: "MSIB Kampus Merdeka",
+    type: "Internship - MSIB Kampus Merdeka",
     image: "/msib.jpg",
     bullets: [
       "Built internal HR analytics outputs using Python, Power BI, and Excel.",
