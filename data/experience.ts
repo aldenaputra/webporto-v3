@@ -2,6 +2,29 @@ import type { ExperienceEntry } from "./types";
 
 export const experience: ExperienceEntry[] = [
   {
+    company: "BI Training Program for PLN Indonesia",
+    role: "BI Training & Analytics Consultant",
+    startDate: "Apr 2026",
+    endDate: "Jul 2026",
+    location: "Jakarta, Indonesia",
+    type: "Freelance",
+    image: "/pln_freelance.png",
+    bullets: [
+      "Built Power BI dashboards with what-if parameter simulations for an enterprise BI training program covering the electricity and EV industries.",
+      "Developed HTML walkthrough guides and a Python (Streamlit) live-analytics demo, giving participants hands-on training material beyond the core dashboards.",
+      "Engaged through a BINUS Graduate Program professor delivering the training; work transitioned from an initial volunteer contribution to a paid engagement based on delivered quality.",
+    ],
+    stack: [
+      "Power BI",
+      "DAX",
+      "Python",
+      "Streamlit",
+      "HTML",
+      "Data Visualization",
+      "Business Intelligence",
+    ],
+  },
+  {
     company: "Shopee (SPX) Express",
     role: "Data Analyst",
     startDate: "Feb 2026",
