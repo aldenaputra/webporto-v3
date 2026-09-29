@@ -27,7 +27,7 @@ export const projects: Project[] = [
       "K-Means",
       "Classification",
     ],
-    featured: false,
+    featured: true,
     links: [
       {
         label: "GitHub",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "Google Colab",
       "EDA",
     ],
-    featured: false,
+    featured: true,
     links: [
       {
         label: "GitHub",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
       "KDD",
       "Classification",
     ],
-    featured: false,
+    featured: true,
     links: [
       {
         label: "GitHub",
@@ -126,7 +126,7 @@ export const projects: Project[] = [
       "Big Data",
       "Data Visualization",
     ],
-    featured: false,
+    featured: true,
     links: [
       {
         label: "GitHub",
@@ -192,7 +192,7 @@ export const projects: Project[] = [
       "Web Security",
       "AI-Assisted Tools",
     ],
-    featured: true,
+    featured: false,
     links: [
       {
         label: "GitHub",
@@ -225,7 +225,7 @@ export const projects: Project[] = [
       "TLS/SSL",
       "Network Analysis",
     ],
-    featured: true,
+    featured: false,
     links: [
       {
         label: "Documentation",
@@ -257,7 +257,7 @@ export const projects: Project[] = [
       "DNS",
       "Cisco Packet Tracer",
     ],
-    featured: true,
+    featured: false,
     links: [
       {
         label: "Documentation",
