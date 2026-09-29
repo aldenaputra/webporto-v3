@@ -3,104 +3,6 @@ import type { Project } from "./types";
 export const projects: Project[] = [
   // Featured Projects
   {
-    slug: "wstg-security-testing",
-    title: "WSTGv4 OWASP Scripting and Testing Project",
-    description:
-      "Developed comprehensive Python scripts and AI-assisted security tools to systematically execute the entire OWASP Web Security Testing Guide (WSTGv4) checklist. Automated end-to-end security testing procedures, vulnerability detection, and generated detailed testing reports to validate web application security posture.",
-    mobileDescription:
-      "Automated OWASP WSTG security checks with Python and AI-assisted tooling.",
-    mobileHighlights: [
-      "Built scripted security test workflows",
-      "Mapped checks to WSTGv4 coverage",
-      "Generated structured testing reports",
-    ],
-    image: {
-      src: "/wstg.png",
-      alt: "OWASP WSTG Security Testing workflow interface",
-    },
-    stack: [
-      "Python",
-      "OWASP",
-      "Cybersecurity",
-      "Security Testing",
-      "Web Security",
-      "AI-Assisted Tools",
-    ],
-    featured: true,
-    links: [
-      {
-        label: "GitHub",
-        url: "https://github.com/aldenaputra/WSTG-Script-and-Master-Report-by-Alden-and-Kenneth.git",
-      },
-    ],
-  },
-  {
-    slug: "network-cybersecurity-labs",
-    title: "Network and Cybersecurity Labs",
-    description:
-      "Completed four in-depth cybersecurity assignments: (1) Penetration Testing Report on Kioptrix Level 1 System with vulnerability findings and remediation recommendations; (2) Memory Forensics Analysis on Cridex Malware using Volatility 2.0 for malware isolation and documentation; (3) TLS/SSL Decryption Analysis using Wireshark demonstrating protocol decryption techniques; (4) Hands-on Pyshark CLI-based Wireshark documentation and practical implementation.",
-    mobileDescription:
-      "Four security labs covering penetration testing, forensics, TLS analysis, and Pyshark workflows.",
-    mobileHighlights: [
-      "Documented findings and remediation",
-      "Analyzed malware memory artifacts",
-      "Practiced packet decryption workflows",
-    ],
-    image: {
-      src: "/network.png",
-      alt: "Network and cybersecurity lab analysis",
-    },
-    stack: [
-      "Penetration Testing",
-      "Wireshark",
-      "Pyshark",
-      "Volatility",
-      "Memory Forensics",
-      "TLS/SSL",
-      "Network Analysis",
-    ],
-    featured: true,
-    links: [
-      {
-        label: "Documentation",
-        url: "https://docs.google.com/document/d/1cTU-OmhIXidmQCD88Kr6X7nnrVfiO_LB0pyc3Ld5EoE/edit?usp=sharing",
-      },
-    ],
-  },
-  {
-    slug: "enterprise-network-simulation",
-    title: "Enterprise Network Simulation",
-    description:
-      "Designed and simulated an enterprise-level network architecture with comprehensive metrics calculation including MTTR (Mean Time To Repair). Implemented GNS3 network environment with DHCP server configuration using keepalived, integrated DNS backup mechanisms, and implemented network security measures to simulate real-world enterprise infrastructure.",
-    mobileDescription:
-      "Designed a simulated enterprise network with redundancy, security, and operational metrics.",
-    mobileHighlights: [
-      "Built GNS3 enterprise topology",
-      "Configured DHCP and DNS backup",
-      "Calculated infrastructure recovery metrics",
-    ],
-    image: {
-      src: "/gns.png",
-      alt: "Enterprise network topology diagram",
-    },
-    stack: [
-      "GNS3",
-      "Network Design",
-      "Network Security",
-      "DHCP",
-      "DNS",
-      "Cisco Packet Tracer",
-    ],
-    featured: true,
-    links: [
-      {
-        label: "Documentation",
-        url: "https://docs.google.com/document/d/1nxVayDarPnyCfkl1QgNnpFR8zBuHkz8d_IhB1w4vN0E/edit?usp=sharing",
-      },
-    ],
-  },
-  // Other Projects
-  {
     slug: "clustering-classification-bigdata",
     title: "Data Clustering & Classification on Multiple Datasets",
     description:
@@ -232,6 +134,137 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  // Other Projects
+  {
+    slug: "karenjet-database-design",
+    title: "KarenJET Database Design Project",
+    description:
+      "Led an enterprise database design project, developing a mitigation plan for system alteration and recovery for specific scenarios involving database transactions. Performed strict normalization from 1NF to 5NF and created diagrams to elaborate the database system.",
+    mobileDescription:
+      "Led an enterprise database design project with normalization and recovery planning.",
+    mobileHighlights: [
+      "Designed enterprise database model",
+      "Normalized schema from 1NF to 5NF",
+      "Created alteration and recovery plan",
+    ],
+    image: {
+      src: "/Database Design.png",
+      alt: "KarenJET database design diagrams",
+    },
+    stack: [
+      "Database Design",
+      "Normalization",
+      "Visual Paradigm",
+      "Excel",
+      "Figma",
+      "ERD",
+    ],
+    featured: false,
+    links: [
+      {
+        label: "Documentation",
+        url: "https://binusianorg-my.sharepoint.com/personal/alden_putra_binus_ac_id/_layouts/15/guestaccess.aspx?share=Ea_I6XQHFexNo-1RpLEk5MwBu3iwi47HMqHfiuZeruUoZg&e=zqngRY",
+      },
+    ],
+  },
+  {
+    slug: "wstg-security-testing",
+    title: "WSTGv4 OWASP Scripting and Testing Project",
+    description:
+      "Developed comprehensive Python scripts and AI-assisted security tools to systematically execute the entire OWASP Web Security Testing Guide (WSTGv4) checklist. Automated end-to-end security testing procedures, vulnerability detection, and generated detailed testing reports to validate web application security posture.",
+    mobileDescription:
+      "Automated OWASP WSTG security checks with Python and AI-assisted tooling.",
+    mobileHighlights: [
+      "Built scripted security test workflows",
+      "Mapped checks to WSTGv4 coverage",
+      "Generated structured testing reports",
+    ],
+    image: {
+      src: "/wstg.png",
+      alt: "OWASP WSTG Security Testing workflow interface",
+    },
+    stack: [
+      "Python",
+      "OWASP",
+      "Cybersecurity",
+      "Security Testing",
+      "Web Security",
+      "AI-Assisted Tools",
+    ],
+    featured: true,
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/aldenaputra/WSTG-Script-and-Master-Report-by-Alden-and-Kenneth.git",
+      },
+    ],
+  },
+  {
+    slug: "network-cybersecurity-labs",
+    title: "Network and Cybersecurity Labs",
+    description:
+      "Completed four in-depth cybersecurity assignments: (1) Penetration Testing Report on Kioptrix Level 1 System with vulnerability findings and remediation recommendations; (2) Memory Forensics Analysis on Cridex Malware using Volatility 2.0 for malware isolation and documentation; (3) TLS/SSL Decryption Analysis using Wireshark demonstrating protocol decryption techniques; (4) Hands-on Pyshark CLI-based Wireshark documentation and practical implementation.",
+    mobileDescription:
+      "Four security labs covering penetration testing, forensics, TLS analysis, and Pyshark workflows.",
+    mobileHighlights: [
+      "Documented findings and remediation",
+      "Analyzed malware memory artifacts",
+      "Practiced packet decryption workflows",
+    ],
+    image: {
+      src: "/network.png",
+      alt: "Network and cybersecurity lab analysis",
+    },
+    stack: [
+      "Penetration Testing",
+      "Wireshark",
+      "Pyshark",
+      "Volatility",
+      "Memory Forensics",
+      "TLS/SSL",
+      "Network Analysis",
+    ],
+    featured: true,
+    links: [
+      {
+        label: "Documentation",
+        url: "https://docs.google.com/document/d/1cTU-OmhIXidmQCD88Kr6X7nnrVfiO_LB0pyc3Ld5EoE/edit?usp=sharing",
+      },
+    ],
+  },
+  {
+    slug: "enterprise-network-simulation",
+    title: "Enterprise Network Simulation",
+    description:
+      "Designed and simulated an enterprise-level network architecture with comprehensive metrics calculation including MTTR (Mean Time To Repair). Implemented GNS3 network environment with DHCP server configuration using keepalived, integrated DNS backup mechanisms, and implemented network security measures to simulate real-world enterprise infrastructure.",
+    mobileDescription:
+      "Designed a simulated enterprise network with redundancy, security, and operational metrics.",
+    mobileHighlights: [
+      "Built GNS3 enterprise topology",
+      "Configured DHCP and DNS backup",
+      "Calculated infrastructure recovery metrics",
+    ],
+    image: {
+      src: "/gns.png",
+      alt: "Enterprise network topology diagram",
+    },
+    stack: [
+      "GNS3",
+      "Network Design",
+      "Network Security",
+      "DHCP",
+      "DNS",
+      "Cisco Packet Tracer",
+    ],
+    featured: true,
+    links: [
+      {
+        label: "Documentation",
+        url: "https://docs.google.com/document/d/1nxVayDarPnyCfkl1QgNnpFR8zBuHkz8d_IhB1w4vN0E/edit?usp=sharing",
+      },
+    ],
+  },
   {
     slug: "plato-ui-ux-prototype",
     title: "PlaTo UI/UX Prototyping",
@@ -312,38 +345,6 @@ export const projects: Project[] = [
       {
         label: "GitHub",
         url: "https://github.com/aldenaputra/webportoexercise.git",
-      },
-    ],
-  },
-  {
-    slug: "karenjet-database-design",
-    title: "KarenJET Database Design Project",
-    description:
-      "Led an enterprise database design project, developing a mitigation plan for system alteration and recovery for specific scenarios involving database transactions. Performed strict normalization from 1NF to 5NF and created diagrams to elaborate the database system.",
-    mobileDescription:
-      "Led an enterprise database design project with normalization and recovery planning.",
-    mobileHighlights: [
-      "Designed enterprise database model",
-      "Normalized schema from 1NF to 5NF",
-      "Created alteration and recovery plan",
-    ],
-    image: {
-      src: "/Database Design.png",
-      alt: "KarenJET database design diagrams",
-    },
-    stack: [
-      "Database Design",
-      "Normalization",
-      "Visual Paradigm",
-      "Excel",
-      "Figma",
-      "ERD",
-    ],
-    featured: false,
-    links: [
-      {
-        label: "Documentation",
-        url: "https://binusianorg-my.sharepoint.com/personal/alden_putra_binus_ac_id/_layouts/15/guestaccess.aspx?share=Ea_I6XQHFexNo-1RpLEk5MwBu3iwi47HMqHfiuZeruUoZg&e=zqngRY",
       },
     ],
   },
