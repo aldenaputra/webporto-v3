@@ -2,6 +2,32 @@ import type { ExperienceEntry } from "./types";
 
 export const experience: ExperienceEntry[] = [
   {
+    company: "Binar Academy",
+    role: "Learning Designer & Co-Facilitator, BI Training",
+    startDate: "Oct 2026",
+    endDate: "Oct 2026",
+    location: "Central Jakarta, Indonesia",
+    type: "Contract, Project-Based",
+    image: "/binar.jpeg",
+    bullets: [
+      "Curriculum design: Bridged BINAR and OJK stakeholders to turn their expectations into the syllabus, using TNA and pre-test data to prioritize topics for mixed skill levels and a tight schedule",
+      "Learning materials: Built and deployed a pre-learning microsite (HTML, CSS, JavaScript on Cloudflare Pages), assembled the main training deck, and wrote pre- and post-tests aligned to the curriculum",
+      "Co-facilitation: Guided hands-on Excel, Power Query, DAX, and Power BI exercises, provided one-on-one coaching and live troubleshooting, and led icebreakers and discussions to keep the room engaged",
+    ],
+    stack: [
+      "Business Intelligence",
+      "Educational Technology",
+      "Corporate Training Facilitation",
+      "Microsoft Excel",
+      "Power Query",
+      "Power BI",
+      "DAX",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+  },
+  {
     company: "BI Training Program for PLN Indonesia",
     role: "BI Training & Analytics Consultant",
     startDate: "Apr 2026",
