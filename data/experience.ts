@@ -3,16 +3,16 @@ import type { ExperienceEntry } from "./types";
 export const experience: ExperienceEntry[] = [
   {
     company: "Binar Academy",
-    role: "Learning Designer & Co-Facilitator, BI Training",
+    role: "Learning Designer & Co-Facilitator, BI & Data Analytics",
     startDate: "Oct 2026",
-    endDate: "Oct 2026",
+    endDate: "Present",
     location: "Central Jakarta, Indonesia",
     type: "Contract, Project-Based",
     image: "/binar.jpeg",
     bullets: [
-      "Curriculum design: Bridged BINAR and OJK stakeholders to turn their expectations into the syllabus, using TNA and pre-test data to prioritize topics for mixed skill levels and a tight schedule",
-      "Learning materials: Built and deployed a pre-learning microsite (HTML, CSS, JavaScript on Cloudflare Pages), assembled the main training deck, and wrote pre- and post-tests aligned to the curriculum",
-      "Co-facilitation: Guided hands-on Excel, Power Query, DAX, and Power BI exercises, provided one-on-one coaching and live troubleshooting, and led icebreakers and discussions to keep the room engaged",
+      "Designing and delivering corporate and government BI and Data Analytics programmes, from needs assessment and curriculum design through assessment and hands-on facilitation.",
+      "Currently leading a government ministry programme in planning and a 4-month upskilling programme for 34 employees across 6 groups, mapping TNA gaps and building Kirkpatrick L2-L3 evaluation, mentor, and reporting tools.",
+      "Completed a 2-day BI programme for 45 managers and assistant managers, using TNA and assessments to shape the curriculum, microsite, deck, and Excel-to-Power-BI facilitation.",
     ],
     stack: [
       "Business Intelligence",
@@ -28,7 +28,7 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    company: "BI Training Program for PLN Indonesia",
+    company: "PLN Indonesia Training",
     role: "BI Training & Analytics Consultant",
     startDate: "Apr 2026",
     endDate: "Jul 2026",
@@ -36,9 +36,9 @@ export const experience: ExperienceEntry[] = [
     type: "Freelance",
     image: "/pln_freelance.png",
     bullets: [
-      "Built Power BI dashboards with what-if parameter simulations for an enterprise BI training program covering the electricity and EV industries.",
-      "Developed HTML walkthrough guides and a Python (Streamlit) live-analytics demo, giving participants hands-on training material beyond the core dashboards.",
-      "Engaged through a BINUS Graduate Program professor delivering the training; work transitioned from an initial volunteer contribution to a paid engagement based on delivered quality.",
+      "Built training materials for an enterprise BI programme for a state-owned energy company through a graduate-program professor, adapting decks and learning content to the client's syllabus and senior-level audience.",
+      "Created Power BI dashboards with what-if simulations, plus HTML walkthrough guides and a Python Streamlit live-analytics demo for hands-on learning.",
+      "Deliverables received strong feedback from the professor and client, leading the engagement to transition from a volunteer contribution to paid work.",
     ],
     stack: [
       "Power BI",
