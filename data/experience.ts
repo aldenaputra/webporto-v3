@@ -34,7 +34,7 @@ export const experience: ExperienceEntry[] = [
     endDate: "Jul 2026",
     location: "Jakarta, Indonesia",
     type: "Freelance",
-    image: "/pln_freelance.png",
+    image: "/pbi_freelance.png",
     bullets: [
       "Built training materials for an enterprise BI programme for a state-owned energy company through a graduate-program professor, adapting decks and learning content to the client's syllabus and senior-level audience.",
       "Created Power BI dashboards with what-if simulations, plus HTML walkthrough guides and a Python Streamlit live-analytics demo for hands-on learning.",
