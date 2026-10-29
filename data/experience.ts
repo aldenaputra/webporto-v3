@@ -3,7 +3,7 @@ import type { ExperienceEntry } from "./types";
 export const experience: ExperienceEntry[] = [
   {
     company: "Binar Academy",
-    role: "Learning Designer & Co-Facilitator, BI & Data Analytics",
+    role: "Learning Designer & Co-Facilitator, BI & DA",
     startDate: "Oct 2026",
     endDate: "Present",
     location: "Central Jakarta, Indonesia",
@@ -28,8 +28,8 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    company: "PLN Indonesia Training",
-    role: "BI Training & Analytics Consultant",
+    company: "Self-Employed",
+    role: "Training Content Developer, BI",
     startDate: "Apr 2026",
     endDate: "Jul 2026",
     location: "Jakarta, Indonesia",
